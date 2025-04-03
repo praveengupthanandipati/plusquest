@@ -1,0 +1,23 @@
+@use "sass:map";
+@use "sass:color";
+@use "mixins" as m;
+@use "variables" as v;
+@use "header";
+@use "footer";
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+
+body {
+    @include m.siteMain;
+    color: map.get(v.$colors, text);
+  
+    a {
+      text-decoration: none;
+      cursor: pointer;
+    }
+  
+    ul, li{
+      list-style: none;
+      margin:0;
+      padding:0;
+    }
+  }

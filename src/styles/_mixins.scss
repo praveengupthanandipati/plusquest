@@ -1,0 +1,157 @@
+
+@use "sass:map";
+@use "variables" as v;
+//Mixin for Transition
+@mixin transition($property: all, $duration: 0.3s, $timing: ease) {
+  transition: $property $duration $timing;
+  @supports not (transition: $property $duration $timing) {
+    -webkit-transition: $property $duration $timing;
+  }
+}
+
+/**
+Usage Transition
+.element {
+  @include transition(color, 0.5s, linear);
+}
+**/
+
+@mixin translate($x: 0, $y: 0) {
+  transform: translate($x, $y);
+  -webkit-transform: translate($x, $y); // Safari and older browsers
+  -moz-transform: translate($x, $y); // Firefox
+  -ms-transform: translate($x, $y); // IE 9
+  -o-transform: translate($x, $y); // Opera
+}
+
+/**
+.element {
+  @include translate(50%, -20%);
+}
+**/
+
+//mixin for transform rotate
+@mixin rotate($deg: 0) {
+  transform: rotate(#{$deg}deg);
+  -webkit-transform: rotate(#{$deg}deg);
+  -moz-transform: rotate(#{$deg}deg);
+  -ms-transform: rotate(#{$deg}deg);
+  -o-transform: rotate(#{$deg}deg);
+}
+
+/**
+.element {
+  @include rotate(45);
+}
+**/
+
+//Flex mixin
+@mixin flex($justify: center, $align: center, $direction: row) {
+  display: flex;
+  justify-content: $justify;
+  align-items: $align;
+  flex-direction: $direction;
+}
+
+/**
+.container {
+  @include flex(space-between, flex-start, column);
+} 
+**/
+
+//Mixin for shadow
+@mixin shadow($top, $left, $blur, $color, $opacity) {
+  $box-shadow: $top $left $blur $color $opacity;
+  box-shadow: $box-shadow;
+  -moz-box-shadow: $box-shadow;
+  -webkit-box-shadow: $box-shadow;
+  -ms-box-shadow: $box-shadow;
+  -o-box-shadow: $box-shadow;
+}
+
+/**
+Usage Transition
+.element {
+  @include shadow(color, 0.5s, linear);
+}
+**/
+
+@mixin siteMain {
+  -webkit-font-smoothing: antialiased;
+  -ms-font-smoothing: antialiased;
+  -o-font-smoothing: antialiased;
+  -moz-font-smoothing: antialiased;
+  margin: 0;
+  padding: 0;
+  font-family: "Poppins", sans-serif;
+}
+
+//Mixin for Responsive Breakpoints
+
+//Mixin for min-width and max-width
+@mixin respond-between($min, $max) {
+  @media (min-width: $min) and (max-width: $max) {
+    @content;
+  }
+}
+
+//Mixin for min-width
+@mixin respond-above($min) {
+  @media (min-width: $min) {
+    @content;
+  }
+}
+
+//Mixin for max-width
+@mixin respond-below($max) {
+  @media (max-width: $max) {
+    @content;
+  }
+}
+
+/**
+Usage of Mixins of breakpoints
+container {
+    @include respond-between(map-get($breakpoints, "md"), map-get($breakpoints, "xl")) {
+        max-width: 960px;
+        margin: 0 auto;
+    }
+}
+
+header {
+    font-size: 1.5rem;
+    @include respond-above(map-get($breakpoints, "md")) {
+        font-size: 2rem;
+    }
+}
+
+sidebar {
+    width: 25%;
+    @include respond-below(map-get($breakpoints, "xl")) {
+        width: 100%;
+    }
+}
+
+**/
+
+//mixin for gradient
+@mixin gradient($direction: 180deg, $color-stops...) {
+  background: linear-gradient($direction, $color-stops);
+
+  //... is number of arguments for that parameters
+
+  // Vendor prefixes (optional)
+  @each $prefix in -webkit-, -moz-, -ms-, -o- {
+    background: #{$prefix}linear-gradient($direction, $color-stops);
+  }
+}
+
+/**Usage
+.element {
+  @include gradient(
+    180deg,
+    rgba(0, 0, 0, 0) 0%,
+    #000 72.28%
+  );
+}
+**/
