@@ -1,0 +1,35 @@
+@use "sass:map";
+@use "variables" as v;
+@use "mixins" as m;
+
+header {
+  .active {
+    color: map.get(v.$colors, primary-color) !important;
+  }
+  .nav-item {
+    .nav-link {
+      padding: 12px 15px !important;
+      color:map.get(v.$colors, darkSecondary-color);
+
+      &:hover {
+        color: map.get(v.$colors, primary-color) !important;
+      }
+    }
+  }
+  .navbar-brand {
+    img {
+      width: 190px;
+    }
+  }
+  .dropdown-item {
+    padding: 10px 25px;
+
+    &:hover {
+      background: map.get(v.$colors, primary-color);
+    }
+  }
+  .dropdown-item.active{
+    background: map.get(v.$colors, primary-color);
+    color:map.get(v.$colors, black-color)!important;
+  }
+}

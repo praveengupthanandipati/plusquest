@@ -1,10 +1,16 @@
-import React from 'react'
+import React from 'react';
+import HomeBanner from '../components/HomeBanner';
+
 
 const Home = () => {
   return (
-    <div>
-        <p>Home Page</p>
-    </div>
+    <>
+        <main>
+            <section className='homeBanner'>
+              <HomeBanner/>
+            </section>
+        </main>
+    </>
   )
 }
 
