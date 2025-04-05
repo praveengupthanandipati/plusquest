@@ -19,6 +19,7 @@ header {
   .navbar-brand {
     img {
       width: 190px;
+      @include m.transition(all, 0.2s, ease);
     }
   }
   .dropdown-item {
@@ -31,5 +32,20 @@ header {
   .dropdown-item.active{
     background: map.get(v.$colors, primary-color);
     color:map.get(v.$colors, black-color)!important;
+  }
+}
+
+.scrolledHeader{
+  background:map.get(v.$colors, text-white);
+  @include m.shadow(0px, 5px, 2px, map.get(v.$colors, "label-color"), 1);
+  @include m.transition(all, 0.2s, ease);
+
+  .navbar-brand {
+    img {
+      width: 150px;     
+    }
+  }
+  .navbar{
+    padding:0;
   }
 }

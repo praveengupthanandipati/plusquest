@@ -1,10 +1,29 @@
-import React from 'react';
+import React, {useState, useEffect} from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import Logo from "../assets/images/logo.png";
 
 const Header = () => {
 
   const location = useLocation();
+  const [scrolled, setScrolled]=useState(false);
+
+  // Scroll event handler
+  useEffect(() => {
+    const handleScroll = () => {
+      const isScrolled = window.scrollY > 50;
+      if (isScrolled !== scrolled) {
+        setScrolled(isScrolled);
+      }
+    };
+
+    // Add event listener
+    window.addEventListener('scroll', handleScroll, { passive: true });
+
+    // Clean up
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, [scrolled]);
 
   //helper function to check if path is active
 
@@ -18,7 +37,7 @@ const Header = () => {
   }
 
   return (
-    <header className="fixed-top">
+    <header className={`fixed-top ${scrolled ? "scrolledHeader" : ""}`}>
     <div className="container">
       <nav
         className="navbar navbar-expand-lg navbar-dark"
