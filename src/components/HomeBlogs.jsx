@@ -17,19 +17,19 @@ const HomeBlogs = () => {
         {
             image:Blog02Img,
             date:"4 days ago",
-            title:"The 7 Must-Learn JavaScript Frameworks and Libraries for Modern Web Developers in 2024",
+            title:"How to Choose Between React, Angular, and Vue for Your Next Frontend Project",
             link:"/blog"
         },
         {
             image:Blog03Img,
             date:"4 days ago",
-            title:"The 7 Must-Learn JavaScript Frameworks and Libraries for Modern Web Developers in 2024",
+            title:"Why Next.js and Node.js Are Dominating Full-Stack Development: A Deep Dive",
             link:"/blog"
         },
         {
             image:Blog04Img,
             date:"4 days ago",
-            title:"The 7 Must-Learn JavaScript Frameworks and Libraries for Modern Web Developers in 2024",
+            title:"Progressive Web Apps vs. Native Apps: Which Delivers Better Performance and User Experience in 2024?",
             link:"/blog"
         },
     ]
@@ -43,7 +43,7 @@ const HomeBlogs = () => {
                   </figure>
                   <article>
                     <p class="p-0 m-0"><small className="text-primary-color">{blogItem.date}</small></p>
-                    <h5 className="text-secondary-color font-semibold">{blogItem.title}</h5>
+                    <h5 className="text-secondary-color font-regular">{blogItem.title}</h5>
                   </article>
                 </Link>
             </div>
