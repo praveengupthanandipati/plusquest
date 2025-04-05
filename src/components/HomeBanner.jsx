@@ -73,7 +73,9 @@ const HomeBanner = () => {
                              </article>
                         </div>
                         <div className="col-md-6 text-end">
-                            <img src={banner.image} alt="" className='img-fluid img-banner'/>
+                            <figure className='img-banner position-relative'>
+                                <img src={banner.image} alt="" className='img-fluid '/>
+                            </figure>
                         </div>
                     </div>
                 </div>

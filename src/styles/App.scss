@@ -75,7 +75,7 @@ body {
     }
     p{
       font-size:0.96rem;
-      line-height: 160%;
+      line-height: 180%;
     }
 }
 
@@ -94,7 +94,28 @@ body {
     border-top-left-radius: 450px;
     border-bottom-left-radius:450px;
     border-top-right-radius: 450px; 
-    width:90%;
+    width:98%;  
+    padding:15px 0;  
+
+    &:before{
+      content:'';
+      border-radius: 415px 411px 0px 418.5px;
+      background: linear-gradient(197deg, #1C005E 7.84%, #522122 88.17%);
+      position: absolute;
+      top:0;
+      left:0;
+      right:0;
+      width:98%;
+      height: 98%;
+      z-index: -1;
+    }
+
+    img{
+      border-top-left-radius: 450px;
+      border-bottom-left-radius:450px;
+      border-top-right-radius: 450px; 
+      width:98%;
+    }
   }
   article{
     // padding-left:25%;
@@ -138,5 +159,61 @@ body {
   h5{
     font-size:clamp(1.3rem, 1.5vw, 1.5rem);
   }
+}
 
+.serviceSection{
+  background: linear-gradient(257deg, rgba(255, 255, 255, 0.29) 0%, rgba(251, 194, 235, 0.21) 100%);
+
+  h2{
+    font-size:clamp(1.5rem, 3vw, 3rem)
+  }
+
+  .cardsRow{
+    padding-top:50px;
+
+    .serviceCard{
+      @include m.transition(all, 0.3s, ease);
+      figure{
+        img{
+          border-radius:15px;
+        }
+      }
+      article{
+        border-radius: 15px 15px 0px 0px;
+        background: linear-gradient(180deg, #000 0%, rgba(0, 0, 0, 0.00) 100%);
+         top:0;
+         left:0;
+         right:0;             
+         
+         h3{
+          font-size:18px;
+          @include m.transition(all, 0.3s, ease);
+         }
+      }
+      &:hover{
+        h3{
+          color:map.get(v.$colors, primary-color)!important;
+        }
+      }
+      span{
+        width:50px;
+        height: 50px;
+        padding:10px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        bottom:-5px;
+        right:-5px;
+        background: map.get(v.$colors, primary-color);
+        border:7px solid map.get(v.$colors, text-white);
+        box-sizing: border-box;
+
+        i{
+          color:map.get(v.$colors, text-white);
+        }
+      }
+    }
+  }
+
+  
 }

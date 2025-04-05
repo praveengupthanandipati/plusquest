@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import HomeBanner from '../components/HomeBanner';
+import HomeServices from '../components/HomeServices';
 import About01Image from "../assets/images/aboutimg01.jpg";
 import About02Image from "../assets/images/aboutimg02.jpg";
 
@@ -10,6 +11,9 @@ const Home = () => {
   const aboutTitle="Pluse Quest";
   const headingtitle="At Pluse Quest, we bring innovation, expertise, and passion to help businesses thrive in the digital age.";
   const aboutDesc="Whether you need skilled resources for Microsoft Power Platform and Dynamics 365 Customer Engagement, impactful digital marketing strategies, or stunning web and mobile app development, we’re your trusted technology partner."
+  const serviceWelcome="Services We Offer";
+  const serviceMainTitle ="Certified Excellence";
+  const serviceSectiontitledesc="With a team of certified professionals and industry experts, we help clients accelerate digital transformation using the Microsoft ecosystem, modern marketing techniques, and user-centric development.";
   return (
     <>
         <main>
@@ -45,6 +49,23 @@ const Home = () => {
                    </div>
                 </div>
             </section>
+
+            <section className="serviceSection homeSection">
+                <div className="container">
+                    <div className="row">
+                         <div className="col-md-6">
+                              <h5 className='font-bold text-primary-color'>{serviceWelcome}</h5>
+                              <h2 className="font-bold text-secondary-color">{serviceMainTitle}</h2>
+                         </div>
+                         <div className="col-md-6">
+                            <p>{serviceSectiontitledesc}</p>
+                         </div>
+                    </div>
+                    <HomeServices/>
+                </div>
+            </section>
+
+            
 
         </main>
     </>
