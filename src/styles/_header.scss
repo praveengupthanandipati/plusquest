@@ -36,8 +36,8 @@ header {
 }
 
 .scrolledHeader{
-  background:map.get(v.$colors, text-white);
-  @include m.shadow(0px, 5px, 2px, map.get(v.$colors, "label-color"), 1);
+  background:map.get(v.$colors, text-white);  
+  @include m.shadow(0px, 0px, 10px, map.get(v.$colors, "secondary-color"), 0.2);
   @include m.transition(all, 0.2s, ease);
 
   .navbar-brand {

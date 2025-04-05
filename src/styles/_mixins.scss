@@ -61,12 +61,7 @@ Usage Transition
 
 //Mixin for shadow
 @mixin shadow($top, $left, $blur, $color, $opacity) {
-  $box-shadow: $top $left $blur $color $opacity;
-  box-shadow: $box-shadow;
-  -moz-box-shadow: $box-shadow;
-  -webkit-box-shadow: $box-shadow;
-  -ms-box-shadow: $box-shadow;
-  -o-box-shadow: $box-shadow;
+  box-shadow: $top $left $blur rgba($color, $opacity);
 }
 
 /**
