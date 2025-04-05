@@ -38,8 +38,8 @@ const HomeBlogs = () => {
         {blogItems.map((blogItem)=>(
             <div className="col-md-3 pb-4">
                 <Link to={blogItem.link} className="blogCard">
-                  <figure>
-                     <img src={blogItem.image} alt={blogItem.title} className="img-fluid" />
+                  <figure className="pb-2 m-0">
+                     <img src={blogItem.image} alt={blogItem.title} className="img-fluid rounded-3" />
                   </figure>
                   <article>
                     <p class="p-0 m-0"><small className="text-primary-color">{blogItem.date}</small></p>

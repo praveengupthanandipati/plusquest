@@ -132,12 +132,25 @@ const Home = () => {
                             </Link>
                         </div>
                     </div>
-
-                    <HomeBlogs/>
-                    
+                    <HomeBlogs/>                    
                 </div>
             </section>
-            
+
+            <section className="homeSection contactSection">
+                <div className="container">
+                    <div className="row  justify-content-center">
+                        <div className="col-md-7">
+                            <article className="text-center">
+                                <h5 className="font-bold text-secondary-color">Have a project in mind or need tech talent? <br/>We're here to help.</h5>
+                                <p className="py-2">Whether you have a question to ask, data to analyze, or an AI solution to build, please get in touch with us. We are always ready to answer your questions, support your data science-related activities and provide our AI services</p>
+                                <Link className="btn-green text-white" to="">
+                                  <span className="text-uppercase"> Contact us</span>
+                                </Link>
+                            </article>
+                        </div>
+                    </div>
+                </div>      
+            </section>            
 
         </main>
     </>

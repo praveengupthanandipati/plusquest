@@ -279,6 +279,11 @@ body {
       font-size:clamp(0.8rem, 0.9vw, 0.9rem);
       @include m.transition(all, 0.3s, ease);
     }
+    p{
+      small{
+        font-size:12px;
+      }
+    }
 
     &:hover{
       h5{
@@ -286,4 +291,15 @@ body {
       }
     }
   }
+}
+
+.contactSection{
+background:url(../assets/images/questionbg.png)no-repeat center center;
+min-height: 500px;
+
+article{
+  h5{
+    font-size:clamp(1.3rem, 1.7vw, 1.7rem);
+  }
+ }
 }
