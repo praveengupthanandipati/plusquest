@@ -1,4 +1,5 @@
 @use "sass:map";
+@use "sass:color";
 @use "variables" as v;
 @use "mixins" as m;
 
@@ -6,29 +7,31 @@ footer{
     background:#000422 url(../assets/images/blob-footer.png)no-repeat center center;
     min-height: 250px;
     position:relative;
-    color:lighten(map.get(v.$colors, label-color), 20%);
-   
+    color: color.scale(map.get(v.$colors, text-white), $lightness: 80%);
+    font-size:13px;
 
-    &:before{
-        content:'';
-        background:url(../assets/images/pattern-footer01.png)no-repeat 0 0;
-        position:absolute;
-        top:0;
-        left:0;
-        width:467px;
-        height:100%;
-        transform: rotate(180deg); 
+    p{
+        font-size:13px; 
     }
-    &:after{
-        content:'';
-        background:url(../assets/images/pattern-footer02.png)no-repeat 0 0;
+
+    &:before, &:after{
+        content:'';       
         position:absolute;
         top:0;
-        right:0;
-        bottom:0;
         width:467px;
-        height:100%;      
-        transform: rotate(180deg); 
+        height:100%;       
+        bottom:0;
+        transform: rotate(180deg);   
+    }   
+
+    &:before{       
+        background:url(../assets/images/pattern-footer01.png)no-repeat 0 0;
+        left:0;    
+    }
+
+    &:after{     
+        background:url(../assets/images/pattern-footer02.png)no-repeat 0 0;  
+        right:0; 
     }
     .moveTop{
         position: fixed;    
@@ -85,10 +88,12 @@ footer{
         li{
             padding-bottom:15px;
             a{
-                color:lighten(map.get(v.$colors, label-color), 20%);
+                // color:lighten(map.get(v.$colors, label-color), 20%);
+                color:color.scale(map.get(v.$colors, label-color), $lightness: 70%);
                 @include m.transition(all, 0.3s, ease);
                 position:relative;
                 padding-left:25px;
+                font-weight: map.get(v.$font-weights, regular);                
 
                 &:before{
                     content:"\F285";
@@ -111,6 +116,6 @@ footer{
         p{
             font-size:13px;
         }
-    }
-   
+    }   
 }
+
