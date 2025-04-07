@@ -49,9 +49,10 @@ const Footer = () => {
                     <h4 className="text-white font-bold pb-4">Company</h4>
                     <ul className="footer-nav">
                         <li><Link to="/">Home</Link></li>
-                        <li><Link to="/about">About</Link></li>
-                        <li><Link to="/services">Services</Link></li>
+                        <li><Link to="/about">About</Link></li>        
+                        <li><Link to="/works">Works</Link></li>               
                         <li><Link to="/careers">Careers</Link></li>
+                        <li><Link to="/blogs">Blogs</Link></li>
                         <li><Link to="/contact">Contact</Link></li>
                     </ul>
                 </div>

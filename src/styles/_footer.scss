@@ -1,121 +1,123 @@
 @use "sass:map";
 @use "sass:color";
+@use "sass:math";
 @use "variables" as v;
 @use "mixins" as m;
 
-footer{
-    background:#000422 url(../assets/images/blob-footer.png)no-repeat center center;
-    min-height: 250px;
-    position:relative;
-    color: color.scale(map.get(v.$colors, text-white), $lightness: 80%);
-    font-size:13px;
+footer {
+  background: #000422 url(../assets/images/blob-footer.png) no-repeat center
+    center;
+  min-height: 250px;
+  position: relative;
+  color: color.scale(map.get(v.$colors, text-white), $lightness: 80%);
+  font-size: 13px;
 
-    p{
-        font-size:13px; 
+  p {
+    font-size: 13px!important;
+  }
+
+  &:before,
+  &:after {
+    content: "";
+    position: absolute;
+    top: 0;
+    width: 467px;
+    height: 100%;
+    bottom: 0;
+    transform: rotate(180deg);
+  }
+
+  &:before {
+    background: url(../assets/images/pattern-footer01.png) no-repeat 0 0;
+    left: 0;
+  }
+
+  &:after {
+    background: url(../assets/images/pattern-footer02.png) no-repeat 0 0;
+    right: 0;
+  }
+  .moveTop {
+    position: fixed;
+    background: map.get(v.$colors, secondary-color);
+    width: 50px;
+    height: 50px;
+    border-radius: 10px;
+    text-align: center;
+    line-height: 45px;
+    right: 25px;
+    bottom: 25px;
+    z-index: 100;
+    @include m.transition(all, 0.5s, ease);
+
+    i {
+      font-size: 25px;
+      color: map.get(v.$colors, text-white);
     }
 
-    &:before, &:after{
-        content:'';       
-        position:absolute;
-        top:0;
-        width:467px;
-        height:100%;       
-        bottom:0;
-        transform: rotate(180deg);   
-    }   
-
-    &:before{       
-        background:url(../assets/images/pattern-footer01.png)no-repeat 0 0;
-        left:0;    
+    &:hover {
+      background: map.get(v.$colors, primary-color);
+      transform: translateY(-5px);
     }
+  }
+  .top-header {
+    padding: 120px 0;
 
-    &:after{     
-        background:url(../assets/images/pattern-footer02.png)no-repeat 0 0;  
-        right:0; 
+    .social-icon {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      // border:1px solid map.get(v.$colors, text-white);
+      display: inline-block;
+      text-align: center;
+      margin-right: 5px;
+      line-height: 40px;
+      @include m.transition(all, 0.3s, ease);
+
+      i {
+        color: map.get(v.$colors, text-white);
+        font-size: 20px;
+      }
+
+      &:hover {
+        background: map.get(v.$colors, primary-color);
+      }
     }
-    .moveTop{
-        position: fixed;    
-        background:map.get(v.$colors, secondary-color);
-        width:50px;
-        height: 50px;
-        border-radius:10px;
-        text-align: center;
-        line-height: 45px;
-        right:25px;
-        bottom:25px;   
-        z-index: 100;
-        @include m.transition(all, 0.5s, ease);    
-    
-        i{
-          font-size:25px;
-          color:map.get(v.$colors, text-white);
+  }
+  .container {
+    position: relative;
+    z-index: 1;
+  }
+  .footer-nav {
+    li {
+      padding-bottom: 15px;
+      a {
+        // color:lighten(map.get(v.$colors, label-color), 20%);
+        color: color.scale(map.get(v.$colors, label-color), $lightness: 70%);
+        @include m.transition(all, 0.3s, ease);
+        position: relative;
+        padding-left: 25px;
+        font-weight: map.get(v.$font-weights, "regular");
+
+        &:before {
+          content: "\F285";
+          font-family: bootstrap-icons;
+          position: absolute;
+          top: 0;
+          left: 0;
         }
-    
-        &:hover{
-          background:map.get(v.$colors, primary-color);
-          transform:translateY(-5px);
+
+        &:hover {
+          color: map.get(v.$colors, primary-color);
         }
       }
-    .top-header{
-        padding:120px 0;
-
-        .social-icon{
-            width:40px;
-            height: 40px;
-            border-radius:50%;
-            // border:1px solid map.get(v.$colors, text-white);
-            display: inline-block;
-            text-align: center;
-            margin-right:5px;
-            line-height: 40px;
-            @include m.transition(all, 0.3s, ease);
-
-            i{
-                color:map.get(v.$colors, text-white);
-                font-size:20px;
-            }
-
-            &:hover{
-                background:map.get(v.$colors, primary-color);
-            }
-        }
     }
-    .container{
-        position:relative;
-        z-index:1;
+  }
+
+  .bottom-footer {
+    background: map.get(v.$colors, darkPrimary-color);
+
+    p {
+      font-size: 13px;
     }
-    .footer-nav{
-        li{
-            padding-bottom:15px;
-            a{
-                // color:lighten(map.get(v.$colors, label-color), 20%);
-                color:color.scale(map.get(v.$colors, label-color), $lightness: 70%);
-                @include m.transition(all, 0.3s, ease);
-                position:relative;
-                padding-left:25px;
-                font-weight: map.get(v.$font-weights, regular);                
-
-                &:before{
-                    content:"\F285";
-                    font-family: bootstrap-icons;
-                    position:absolute;
-                    top:0;
-                    left:0;
-                }
-
-                &:hover{
-                    color:map.get(v.$colors, primary-color);
-                }
-            }
-        }
-    }
-
-    .bottom-footer{
-        background:map.get(v.$colors, darkSecondary-color);
-
-        p{
-            font-size:13px;
-        }
-    }   
+  }
 }
-

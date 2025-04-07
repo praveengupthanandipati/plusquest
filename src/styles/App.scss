@@ -330,4 +330,55 @@ article{
       }
     }
   }
+  .subpageContent{
+    padding:5rem 0;
+
+    h2{
+      font-size:clamp(1.8rem, 2vw, 2rem);
+      color:map.get(v.$colors, secondary-color);
+      font-weight: map.get(v.$font-weights, bold);
+      padding-bottom:1rem;
+    }
+    p{
+      color: color.scale(map.get(v.$colors, black-color), $lightness: 5%);
+    }
+
+    .list-items{
+      li{
+        padding-bottom:1.5rem;
+        color: color.scale(map.get(v.$colors, black-color), $lightness: 5%);
+        font-size:0.96rem;
+        line-height: 180%;
+        position:relative;
+        padding-left:30px;
+
+        &:before{
+          content:'\F270';
+          font-family: bootstrap-icons;
+          position: absolute;
+          top:2px;
+          left:0;
+          font-size:20px;
+          color:map.get(v.$colors, primary-color);
+        }
+      }
+    }
+    .teampic{
+      overflow: hidden;
+      img{
+        filter:grayscale(100%);   
+        @include m.transition(all, 0.3s, ease);
+
+        &:hover{
+          transform: scale(1.05);
+          filter:grayscale(0);   
+        }
+      }
+    }
+    .team-desc{
+      h5{
+        font-size:0.9rem, 1vw, 1rem;
+      }
+    }
+  }
 }

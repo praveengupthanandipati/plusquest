@@ -134,6 +134,11 @@ const Header = () => {
                   Careers
                 </Link>
               </li>
+              <li className="nav-item">
+                <Link to="/Blogs" className={`nav-link ${isActive("/Blogs")}`} >
+                  Blogs
+                </Link>
+              </li>
             </ul>
             <ul className="navbar-nav justify-content-end flex-grow-1 align-self-center">
               <li>

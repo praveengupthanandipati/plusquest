@@ -15,7 +15,7 @@ const Home = () => {
   const aboutDesc="Whether you need skilled resources for Microsoft Power Platform and Dynamics 365 Customer Engagement, impactful digital marketing strategies, or stunning web and mobile app development, we’re your trusted technology partner."
   const serviceWelcome="Services We Offer";
   const serviceMainTitle ="Certified Excellence";
-  const serviceSectiontitledesc="With a team of certified professionals and industry experts, we help clients accelerate digital transformation using the Microsoft ecosystem, modern marketing techniques, and user-centric development.";
+  const serviceSectiontitledesc="Our certified experts drive digital transformation through Microsoft solutions, smart marketing, and intuitive development";
 
   const whyChooseCards=[
     {
