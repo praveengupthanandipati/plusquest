@@ -86,11 +86,9 @@ const Header = () => {
                 </Link>
               </li>
               <li className={`nav-item dropdown ${isDropdownActive([
-                "/services/UIUXDesign",
-                "/services/web-dev",
-                "/services/mobile-dev",
-                "/services/digital-marketing"
-
+                "/Services/PowerPlatform",
+                "/Services/DigitalMarketing",
+                "/Services/WebMobileDevelopment", 
               ])}`}>
                 <Link
                   className="nav-link dropdown-toggle"
@@ -103,25 +101,20 @@ const Header = () => {
                 </Link>
                 <ul className="dropdown-menu">
                   <li>
-                    <Link className={`dropdown-item ${isActive("/services/UIUXDesign")}`} to="/services/UIUXDesign">
+                    <Link className={`dropdown-item ${isActive("/Services/PowerPlatform")}`} to="/Services/PowerPlatform">
                       Power Platform & Dynamics 365 CE Resources
                     </Link>
                   </li>
                   <li>
-                    <Link className={`dropdown-item ${isActive("/services/WebDevelopment")}`} to="/services/WebDevelopment">
+                    <Link className={`dropdown-item ${isActive("/Services/DigitalMarketing")}`} to="/Services/DigitalMarketing">
                       Digital & Social Media Marketing
                     </Link>
                   </li>
                   <li>
-                    <Link className={`dropdown-item ${isActive("/services/MobileDevelopment")}`} to="/services/MobileDevelopment">
+                    <Link className={`dropdown-item ${isActive("/Services/WebMobileDevelopment")}`} to="/services/WebMobileDevelopment">
                       Website & Mobile App Development
                     </Link>
-                  </li>
-                  <li>
-                  <Link className={`dropdown-item ${isActive("/services/DigitalMarketing")}`} to="/services/DigitalMarketing">
-                      Staffing & Recruting
-                  </Link>
-                  </li>
+                  </li>                 
                 </ul>
               </li>
               <li className="nav-item">

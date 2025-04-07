@@ -67,6 +67,32 @@ body {
       }
     }
 
+    .btn-border {      
+      padding: 12px 30px;
+      border-radius: 5px;
+      background: transparent;
+      @include m.transition(all, 0.3s, ease);
+      border:1px solid map.get(v.$colors, label-color);
+      color:map.get(v.$colors, secondary-color);
+    
+      span {
+        &:after {
+          content: "\F138";
+          font-family: bootstrap-icons;
+          position: relative;
+          top: 3px;
+          left: 3px;
+        }
+      }
+      &:hover {
+        background: color.adjust(
+          map.get(v.$colors, darkSecondary-color),
+          $lightness: -10%
+        );
+        color:map.get(v.$colors, text-white);
+      }
+    }
+
 
     h1, h2, h3, h4, h5, h6{
       line-height: 140%;
@@ -345,7 +371,7 @@ article{
 
     .list-items{
       li{
-        padding-bottom:1.5rem;
+        padding-bottom:1rem;
         color: color.scale(map.get(v.$colors, black-color), $lightness: 5%);
         font-size:0.96rem;
         line-height: 180%;
@@ -380,5 +406,8 @@ article{
         font-size:0.9rem, 1vw, 1rem;
       }
     }
+  }
+  .workRow{
+    padding-bottom:2rem;
   }
 }

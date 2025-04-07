@@ -58,10 +58,9 @@ const About = () => {
               </p>
 
               <p>
-                <strong>
-                  {" "}
-                  Building Digital Futures, One Solution at a Time:
-                </strong>{" "}
+                <strong>                  
+                    Building Digital Futures, One Solution at a Time:
+                </strong>
                 At PluseQuest, we don’t just adapt to the digital world—we help
                 you lead it. Specializing in Microsoft Power Platform, Dynamics
                 365, and custom development, we turn complex challenges into
