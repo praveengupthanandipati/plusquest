@@ -89,6 +89,7 @@ const Header = () => {
                 "/Services/PowerPlatform",
                 "/Services/DigitalMarketing",
                 "/Services/WebMobileDevelopment", 
+                "/Services/Staffing", 
               ])}`}>
                 <Link
                   className="nav-link dropdown-toggle"
@@ -114,7 +115,12 @@ const Header = () => {
                     <Link className={`dropdown-item ${isActive("/Services/WebMobileDevelopment")}`} to="/services/WebMobileDevelopment">
                       Website & Mobile App Development
                     </Link>
-                  </li>                 
+                  </li>   
+                  <li>
+                    <Link className={`dropdown-item ${isActive("/Services/Staffing")}`} to="/services/Staffing">
+                      Staffing and Recruting HR
+                    </Link>
+                  </li>              
                 </ul>
               </li>
               <li className="nav-item">
