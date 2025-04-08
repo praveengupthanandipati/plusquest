@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import SubPageHeader from "../components/SubPageHeader";
 import CareerImg01 from "../assets/images/careers01.jpg";
 import CareerImg02 from "../assets/images/careers02.jpg";
@@ -10,10 +11,14 @@ const Careers = () => {
         <SubPageHeader
           subtitle={"Careers"}
           title={"Join PlusQuest: Innovate, Grow & Thrive in Your Dream Career"}
-        />
+        />  
+        <div className="container">
+            <p>Join with us and Send your updated Resume to <Link to="mailto:careers@plusquest.com">careers@plusquest.com</Link></p>     
+        </div>
       </section>
       <section className="subpageContent">
-        <div className="container">
+        <div className="container">      
+            
           <div className="row">
             <div className="col-md-6">
               <img src={CareerImg01} alt="" className="img-fluid" />
@@ -26,6 +31,7 @@ const Careers = () => {
                 mentorship, cutting-edge projects, and flexible work
                 arrangements that balance ambition with wellbeing.
               </p>
+              
               <p>
                 Impactful work, skill development programs, competitive
                 benefits, and inclusive teams define our culture. Build

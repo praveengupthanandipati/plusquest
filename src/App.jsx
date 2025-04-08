@@ -9,6 +9,7 @@ import WebMobileDevelopment from './pages/Services/WebMobileDevelopment';
 import Staffing from './pages/Services/Staffing';
 import Works from './pages/Works';
 import Careers from "./pages/Careers";
+import Blogs from "./pages/Blogs";
 
 
 function App() {  
@@ -25,7 +26,8 @@ function App() {
             <Route path="Services/WebMobileDevelopment" element={<WebMobileDevelopment/>}/>
             <Route path="Services/Staffing" element={<Staffing/>}/>
             <Route path="Works" element={<Works/>}/>
-            <Route path="Careers" element={<Careers/>}/>            
+            <Route path="Careers" element={<Careers/>}/>       
+            <Route path="Blogs" element={<Blogs/>}/>
         </Routes>
         <Footer/>
      </Router>
