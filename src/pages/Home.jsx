@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import HomeBanner from "../components/HomeBanner";
 import HomeServices from "../components/HomeServices";
-import HomeBlogs from "../components/HomeBlogs";
+import RecentBlogsWrapper from "../components/RecentBlogsWrapper";
 import About01Image from "../assets/images/aboutimg01.jpg";
 import About02Image from "../assets/images/aboutimg02.jpg";
 import WhyImageHome from "../assets/images/whyimg.png";
@@ -153,7 +153,7 @@ const Home = () => {
                 </Link>
               </div>
             </div>
-            <HomeBlogs />
+            <RecentBlogsWrapper />
           </div>
         </section>
 

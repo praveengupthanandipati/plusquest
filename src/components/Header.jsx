@@ -118,7 +118,7 @@ const Header = () => {
                   </li>   
                   <li>
                     <Link className={`dropdown-item ${isActive("/Services/Staffing")}`} to="/services/Staffing">
-                      Staffing and Recruting HR
+                      Staffing and Recruiting HR
                     </Link>
                   </li>              
                 </ul>
@@ -141,7 +141,7 @@ const Header = () => {
             </ul>
             <ul className="navbar-nav justify-content-end flex-grow-1 align-self-center">
               <li>
-                <Link className="btn-green text-white" to="">
+                <Link className="btn-green text-white" to="/Contact">
                   <span className="text-uppercase"> Contact us</span>
                 </Link>
               </li>

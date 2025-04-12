@@ -10,6 +10,15 @@ import Staffing from './pages/Services/Staffing';
 import Works from './pages/Works';
 import Careers from "./pages/Careers";
 import Blogs from "./pages/Blogs";
+import MicrosoftPowerPlatform from './pages/Blogs/MicrosoftPowerPlatform';
+import SocialMediaMarketingHacks from './pages/Blogs/SocialMediaMarketingHacks';
+import WhyrjsisthebestChoice from './pages/Blogs/WhyrjsisthebestChoice';
+import TheUltimateGuideStaffing from './pages/Blogs/TheUltimateGuideStaffing';
+import LowcodeRevolution from './pages/Blogs/LowcodeRevolution';
+import MobileAppDevelopment from './pages/Blogs/MobileAppDevelopment';
+import DynamicsCRMCustomization from './pages/Blogs/DynamicsCRMCustomization';
+import ContentMarketing from './pages/Blogs/ContentMarketing';
+import Contact from './pages/Contact';
 
 
 function App() {  
@@ -28,6 +37,17 @@ function App() {
             <Route path="Works" element={<Works/>}/>
             <Route path="Careers" element={<Careers/>}/>       
             <Route path="Blogs" element={<Blogs/>}/>
+            <Route path="Blogs/MicrosoftPowerPlatform" element={<MicrosoftPowerPlatform/>}/>
+            <Route path="Blogs/SocialMediaMarketingHacks" element={<SocialMediaMarketingHacks/>}/>      
+            <Route path="Blogs/WhyrjsisthebestChoice" element={<WhyrjsisthebestChoice/>}/>    
+            <Route path="Blogs/TheUltimateGuideStaffing" element={<TheUltimateGuideStaffing/>}/>    
+            <Route path="Blogs/LowcodeRevolution" element={<LowcodeRevolution/>}/>  
+            <Route path="Blogs/MobileAppDevelopment" element={<MobileAppDevelopment/>}/>
+            <Route path="Blogs/DynamicsCRMCustomization" element={<DynamicsCRMCustomization/>}/>
+            <Route path="Blogs/ContentMarketing" element={<ContentMarketing/>}/>
+            
+            
+            <Route path="Contact" element={<Contact/>}/>
         </Routes>
         <Footer/>
      </Router>

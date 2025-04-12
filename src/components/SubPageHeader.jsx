@@ -5,7 +5,7 @@ const SubPageHeader = ({subtitle, title}) => {
     <div>
        <div className="container">
             <div className="row">
-                <div class="col-md-6">
+                <div class="col-md-10">
                 <h5 class="pb-2 text-primary-color font-semibold">
                     {subtitle}
                 </h5>

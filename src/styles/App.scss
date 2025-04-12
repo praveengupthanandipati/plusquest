@@ -302,7 +302,8 @@ body {
 .blogSection{
   .blogCard{
     h5{
-      font-size:clamp(0.8rem, 0.9vw, 0.9rem);
+      font-size:clamp(0.8rem, 1vw, 1rem);
+      line-height: 150%;
       @include m.transition(all, 0.3s, ease);
     }
     p{
@@ -353,6 +354,11 @@ article{
         width:110px;
         height: 4px;
         background: linear-gradient(90deg, #84B84B 0%, rgba(133, 255, 0, 0.00) 100%);
+      }
+    }
+    .BreadCrumb{
+      .breadcrumb-item{
+        font-size:14px;
       }
     }
   }
@@ -411,3 +417,44 @@ article{
     padding-bottom:2rem;
   }
 }
+
+.error-message{
+  font-size:12px;
+  color:red;
+}
+
+.form-group{
+  &:placeholder{
+    font-size:13px;
+  }
+  .form-control{
+    min-height: 50px;;
+  }
+  .form-label{
+    padding-bottom:5px;
+    margin:0;
+    font-size:14px;
+  }
+}
+
+.addressarticle{
+  width:300px;
+}
+
+.contactcols{
+  padding-top:5rem;
+}
+
+.BlogArticle{
+  h4{
+    padding-bottom:10px;
+    font-weight: map.get(v.$font-weights, semibold);
+  }
+  .list-items{
+    padding-bottom:20px;
+    li{
+      padding-bottom:0.8rem;
+    }
+  }
+}
+
