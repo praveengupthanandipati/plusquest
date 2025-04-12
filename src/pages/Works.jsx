@@ -6,6 +6,8 @@ import Project02Image from "../assets/images/project02.jpg";
 import Project03Image from "../assets/images/project03.jpg";
 
 const Works = () => {
+  const subTitle ="Our Work";
+  const title ="Innovative Solutions, Measurable Results – See How We Deliver Excellence";
     const Projects =[
         {
             id:1,
@@ -39,11 +41,23 @@ const Works = () => {
     <main className="Subpage">
       <section className="subpageHeader">
         <SubPageHeader
-          subtitle={"Our Work"}
-          title={
-            "Innovative Solutions, Measurable Results – See How We Deliver Excellence"
-          }
+          subtitle={subTitle}
+          title={title}
         />
+          <div className="container">
+            <div className="BreadCrumb pt-4">
+                <nav aria-label="breadcrumb">
+                  <ol class="breadcrumb">
+                    <li className="breadcrumb-item">
+                      <Link to="/">Home</Link>
+                    </li>                
+                    <li className="breadcrumb-item active" aria-current="page">
+                      {subTitle}
+                    </li>
+                  </ol>
+                </nav>
+              </div>
+            </div>
       </section>
       <section className="subpageContent">
         <div className="container">

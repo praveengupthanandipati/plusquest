@@ -17,32 +17,37 @@ const HomeBanner = () => {
     const homeBanners = [
         {
             id: 1,
-            title: "Empowering Your Business with Cutting-Edge Digital Solutions",
-            subTitle:"PluseQuest Technology",
+            titletext:"Cloud",
+            title: "Unlock business potential with tailored Microsoft cloud solutions today ",
+            subTitle:"Power Platform & Dynamics 365",
             image:banner01            
         },
         {
             id: 2,
-            title: "Empowering Your Business with Cutting-Edge Digital Solutions",
-            subTitle:"PluseQuest Technology",
+            titletext:"Digital",
+            title: "Elevate your brand through strategic digital engagement campaigns",
+            subTitle:"Digital & Social Marketing",
             image:banner02            
         },
         {
             id: 3,
-            title: "Empowering Your Business with Cutting-Edge Digital Solutions",
-            subTitle:"PluseQuest Technology",
+            titletext:"Web Dev",
+            title: "Build scalable web and mobile solutions that drive growth",
+            subTitle:"Web & Mobile App Development",
             image:banner03            
         },
         {
             id: 4,
-            title: "Empowering Your Business with Cutting-Edge Digital Solutions",
-            subTitle:"PluseQuest Technology",
+            titletext:"Staffing",
+            title: "Connect with top-tier professionals for your organizational needs",
+            subTitle:"Staffing & HR Services",
             image:banner04            
         },
         {
             id: 5,
-            title: "Empowering Your Business with Cutting-Edge Digital Solutions",
-            subTitle:"PluseQuest Technology",
+            titletext:"Technical",
+            title: "Future-proof your business with our end-to-end tech expertise",
+            subTitle:"Comprehensive Tech Services",
             image:banner05         
         },
     ]
@@ -62,11 +67,12 @@ const HomeBanner = () => {
        >
         {homeBanners.map((banner)=>(  
             <SwiperSlide>
-                <div className='container'>
-                    <div className="row justify-content-between">
+                <div className='container position-relative'>
+                 <div className='bannerTag text-uppercase'>{banner.titletext}</div>
+                    <div className="row justify-content-between">                        
                         <div className="col-md-6 align-self-center">
                              <article>
-                                <h5 className='text-uppercase font-semibold'>{banner.subTitle}</h5>
+                                <h5 className='text-uppercase font-semibold text-primary-color'>{banner.subTitle}</h5>
                                 <h1 className="bannerTitle font-bold text-secondary-color">
                                    {banner.title}
                                 </h1>

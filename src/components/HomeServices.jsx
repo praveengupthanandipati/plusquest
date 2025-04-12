@@ -11,22 +11,22 @@ const HomeServices = () => {
         {
             image:Powerplatformimg,
             title:"Power Platform & Dynamics 365 CE Resources",
-            link:"/powerplatform"
+            link:"Services/PowerPlatform"
         },
         {
             image:SocialMediaHomeImg,
             title:"Digital & Social Media Marketing",
-            link:"/powerplatform"
+            link:"Services/DigitalMarketing"
         },
         {
             image:WebnMobileHomeImg,
             title:"Website & Mobile App Development",
-            link:"/powerplatform"
+            link:"Services/WebMobileDevelopment"
         },
         {
             image:hrHomeImg,
             title:"Staffing and Recruiting HR Services",
-            link:"/powerplatform"
+            link:"Services/Staffing"
         },
     ]
   return (

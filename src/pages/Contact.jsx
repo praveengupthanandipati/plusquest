@@ -4,13 +4,29 @@ import SubPageHeader from "../components/SubPageHeader";
 import ContactForm from "../components/ContactForm";
 
 const Contact = () => {
+  const subTitle ="Connect With Us";
+  const title ="Get in Touch – We're Here to Help You Succeed";
   return (
     <main className="Subpage">
       <section className="subpageHeader">
         <SubPageHeader
-          subtitle={"Connect With Us"}
-          title={"Get in Touch – We're Here to Help You Succeed"}
+          subtitle={subTitle}
+          title={title}          
         />
+           <div className="container">
+            <div className="BreadCrumb pt-4">
+                <nav aria-label="breadcrumb">
+                  <ol class="breadcrumb">
+                    <li className="breadcrumb-item">
+                      <Link to="/">Home</Link>
+                    </li>                
+                    <li className="breadcrumb-item active" aria-current="page">
+                      {subTitle}
+                    </li>
+                  </ol>
+                </nav>
+              </div>
+            </div>
       </section>
 
       <section className="subpageContent">

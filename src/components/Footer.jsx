@@ -59,10 +59,10 @@ const Footer = () => {
                 <div className="col-md-4">
                     <h4 className="text-white font-bold pb-4">Services</h4>
                     <ul className="footer-nav">                     
-                        <li><Link to="">Power Platform & Dynamics 365 </Link></li>
-                        <li><Link to="">Digital & Social Media Marketing</Link></li>
-                        <li><Link to="">Website & Mobile App Develop</Link></li>
-                        <li><Link to="">IT Staffing & Recruting</Link></li>
+                        <li><Link to="/Services/PowerPlatform">Power Platform & Dynamics 365 CE Resources</Link></li>
+                        <li><Link to="/Services/DigitalMarketing">Digital & Social Media Marketing</Link></li>
+                        <li><Link to="/Services/WebMobileDevelopment">Website & Mobile App Development</Link></li>
+                        <li><Link to="/Services/Staffing"> Staffing and Recruiting HR</Link></li>
                     </ul>
                 </div>
             </div>

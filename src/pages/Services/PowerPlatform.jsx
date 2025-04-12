@@ -1,16 +1,36 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import SubPageHeader from "../../components/SubPageHeader";
 import PowerPlatformImg1 from "../../assets/images/powerplatform01.jpg";
 import PowerPlatformImg2 from "../../assets/images/powerplatform02.jpg";
 
 const PowerPlatform = () => {
+  const subTitle ="Services";
+  const title ="Power Platform & Dynamics 365 CRM automation experts";
   return (
     <main className="Subpage">
       <section className="subpageHeader">
         <SubPageHeader
-          subtitle={"Power Platform & Dynamics 365 CE Resources"}
-          title={"Power Platform & Dynamics 365 CRM automation experts"}
+          subtitle={subTitle}
+          title={title}
         />
+        <div className="container">
+          <div className="BreadCrumb pt-4">
+              <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                  <li className="breadcrumb-item">
+                    <Link to="/">Home</Link>
+                  </li>
+                  <li className="breadcrumb-item">
+                    <Link to="/">{subTitle}</Link>
+                  </li>
+                  <li className="breadcrumb-item active" aria-current="page">
+                    {title}
+                  </li>
+                </ol>
+              </nav>
+            </div>
+          </div>
       </section>
       <section className="subpageContent">
         <div className="container">

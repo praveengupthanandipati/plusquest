@@ -5,13 +5,29 @@ import CareerImg01 from "../assets/images/careers01.jpg";
 import CareerImg02 from "../assets/images/careers02.jpg";
 
 const Careers = () => {
+  const subTitle ="Careers";
+  const title ="Join PlusQuest: Innovate, Grow & Thrive in Your Dream Career";
   return (
     <main className="Subpage">
       <section className="subpageHeader">
         <SubPageHeader
-          subtitle={"Careers"}
-          title={"Join PlusQuest: Innovate, Grow & Thrive in Your Dream Career"}
+          subtitle={subTitle}
+          title={title}
         />  
+         <div className="container">
+            <div className="BreadCrumb pt-4">
+                <nav aria-label="breadcrumb">
+                  <ol class="breadcrumb">
+                    <li className="breadcrumb-item">
+                      <Link to="/">Home</Link>
+                    </li>                
+                    <li className="breadcrumb-item active" aria-current="page">
+                      {subTitle}
+                    </li>
+                  </ol>
+                </nav>
+              </div>
+            </div>
         <div className="container">
             <p>Join with us and Send your updated Resume to <Link to="mailto:careers@plusquest.com">careers@plusquest.com</Link></p>     
         </div>

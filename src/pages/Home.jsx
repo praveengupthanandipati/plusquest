@@ -79,7 +79,7 @@ const Home = () => {
                   </h2>
                   <h5 className="font-bold">{headingtitle}</h5>
                   <p class="py-2">{aboutDesc}</p>
-                  <Link className="btn-blue text-white" to="">
+                  <Link className="btn-blue text-white" to="About">
                     <span className="text-uppercase"> Read More</span>
                   </Link>
                 </div>
@@ -148,7 +148,7 @@ const Home = () => {
                 </h2>
               </div>
               <div className="col-md-6 text-end">
-                <Link className="btn-green text-white" to="">
+                <Link className="btn-green text-white" to="Blogs">
                   <span className="text-uppercase"> View All</span>
                 </Link>
               </div>
@@ -172,7 +172,7 @@ const Home = () => {
                     always ready to answer your questions, support your data
                     science-related activities and provide our AI services
                   </p>
-                  <Link className="btn-green text-white" to="">
+                  <Link className="btn-green text-white" to="Contact">
                     <span className="text-uppercase"> Contact us</span>
                   </Link>
                 </article>

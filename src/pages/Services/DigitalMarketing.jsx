@@ -1,18 +1,36 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import SubPageHeader from "../../components/SubPageHeader";
 import DigitalMarketingImg01 from "../../assets/images/digitalmakrketing01.jpg";
 import DigitalMarketingImg02 from "../../assets/images/digitalmakrketing02.jpg";
 
 const DigitalMarketing = () => {
+  const subTitle ="Services:Digital & Social Media Marketing";
+  const title ="Grow your brand presence with our data-driven marketing solutions";
   return (
     <main className="Subpage">
       <section className="subpageHeader">
         <SubPageHeader
-          subtitle={"Digital & Social Media Marketing"}
-          title={
-            "Grow your brand presence with our data-driven marketing solutions:"
-          }
+          subtitle={subTitle}
+          title={title}
         />
+         <div className="container">
+          <div className="BreadCrumb pt-4">
+              <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                  <li className="breadcrumb-item">
+                    <Link to="/">Home</Link>
+                  </li>
+                  <li className="breadcrumb-item">
+                    <Link to="/">{subTitle}</Link>
+                  </li>
+                  <li className="breadcrumb-item active" aria-current="page">
+                    {title}
+                  </li>
+                </ol>
+              </nav>
+            </div>
+          </div>
       </section>
       <section className="subpageContent">
         <div className="container">

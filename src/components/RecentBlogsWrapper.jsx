@@ -4,7 +4,10 @@ import HomeBlogs from './HomeBlogs';
 const RecentBlogsWrapper = () => {
   return (
     <div className="recent-blogs-container">
-        <HomeBlogs/>
+        <HomeBlogs
+          home={true}
+          link="/Blogs/"
+        />
         <style jsx>{`
           /* Hide all blog items by default */
           .recent-blogs-container .col-md-3 {

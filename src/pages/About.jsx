@@ -1,10 +1,13 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import SubPageHeader from "../components/SubPageHeader";
 import About01Img from "../assets/images/about01.jpg";
 import About02Img from "../assets/images/about02.jpg";
 import Teampic from "../assets/images/teampic.jpg";
 
 const About = () => {
+  const subTitle ="About Us";
+  const title ="Empowering Your Business with Cutting-Edge Digital Solutions";
   const teamMembers = [
     {
       image: Teampic,
@@ -31,9 +34,23 @@ const About = () => {
     <main className="Subpage">
       <section className="subpageHeader">
         <SubPageHeader
-          subtitle={"About Us"}
-          title={"Empowering Your Business with Cutting-Edge Digital Solutions"}
+          subtitle={subTitle}
+          title={title}
         />
+        <div className="container">
+          <div className="BreadCrumb pt-4">
+              <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                  <li className="breadcrumb-item">
+                    <Link to="/">Home</Link>
+                  </li>                
+                  <li className="breadcrumb-item active" aria-current="page">
+                    {subTitle}
+                  </li>
+                </ol>
+              </nav>
+            </div>
+          </div>
       </section>
       <section className="subpageContent">
         <div className="container">
