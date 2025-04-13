@@ -195,9 +195,9 @@ const Header = () => {
                 </li>
               </ul>
               <ul className="navbar-nav justify-content-end flex-grow-1 align-self-center">
-                <li>
+                <li className="pt-4 pt-md-0">
                   <Link 
-                    className="btn-green text-white" 
+                    className="btn-green text-white headerbtn" 
                     to="/Contact"
                     onClick={handleNavLinkClick}
                   >

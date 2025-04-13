@@ -1,18 +1,25 @@
 @use "sass:map";
 @use "variables" as v;
-@use "mixins" as m;
+@use "./mixins" as m;
+@use "./mixins" as *;
 
 header {
   .active {
-    color: map.get(v.$colors, primary-color) !important;
+    color: map.get(v.$colors, "primary-color") !important;
   }
   .nav-item {
     .nav-link {
       padding: 12px 15px !important;
-      color:map.get(v.$colors, darkSecondary-color);
+      color:map.get(v.$colors, "darkSecondary-color");
+
+      @include respond-below(map.get(v.$breakpoints, "md")){
+        background-color:map.get(v.$colors, "text-white");
+        margin-bottom:5px;
+        border-radius:5px;
+      }
 
       &:hover {
-        color: map.get(v.$colors, primary-color) !important;
+        color: map.get(v.$colors, "primary-color") !important;
       }
     }
   }
@@ -25,18 +32,22 @@ header {
   .dropdown-item {
     padding: 10px 25px;
 
+    @include respond-below(map.get(v.$breakpoints, "md")){
+      text-wrap: auto;
+    }
+
     &:hover {
-      background: map.get(v.$colors, primary-color);
+      background: map.get(v.$colors, "primary-color");
     }
   }
   .dropdown-item.active{
-    background: map.get(v.$colors, primary-color);
+    background: map.get(v.$colors, "primary-color");
     color:map.get(v.$colors, black-color)!important;
   }
 }
 
 .scrolledHeader{
-  background:map.get(v.$colors, text-white);  
+  background:map.get(v.$colors, "text-white");  
   @include m.shadow(0px, 0px, 10px, map.get(v.$colors, "secondary-color"), 0.2);
   @include m.transition(all, 0.2s, ease);
 
@@ -47,5 +58,11 @@ header {
   }
   .navbar{
     padding:0;
+  }  
+
+  .headerbtn{
+    @include respond-below(map.get(v.$breakpoints, "md")){
+      width:100%;
+    }
   }
 }

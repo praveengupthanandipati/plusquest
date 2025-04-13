@@ -92,7 +92,7 @@ const ContactForm = () => {
       };
   return (
     <>
-        <div className="card shadow p-3">
+        <div className="card shadow p-2 p-md-4">
             <div className="card-body">
                     <h4 className="card-title font-bold pb-0 mb-0">Get in Touch</h4>
                     <p>You can reach us anytime</p>

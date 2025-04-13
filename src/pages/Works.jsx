@@ -63,10 +63,10 @@ const Works = () => {
         <div className="container">
             {Projects.map((project)=>(            
                 <div className="row workRow" key={project.id}>
-                <div className="col-md-8">
+                <div className="col-md-7">
                 <img src={project.image} alt={project.title} className="img-fluid" />
                 </div>
-                <div className="col-md-4 align-self-center">
+                <div className="col-md-5 align-self-center">
                 <article className="pb-3">
                     <p>
                     <strong>Project Title:</strong> {project.title}

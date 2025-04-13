@@ -69,14 +69,14 @@ const Home = () => {
                   <div className="col-md-6 position-relative">
                     <img
                       src={About02Image}
-                      className="shadow rounded-4 homeAboutImage image2 position-absolute img-fluid"
+                      className="shadow rounded-4 homeAboutImage image2 img-fluid"
                       alt=""
                     />
                   </div>
                 </div>
               </div>
               <div className="col-md-6 align-self-center">
-                <div className="aboutIntro">
+                <div className="aboutIntro pt-4 pt-md-0">
                   <h5 className="font-bold">{aboutWelcome}</h5>
                   <h2 className="text-uppercase text-primary-color font-bold">
                     {aboutTitle}
@@ -145,13 +145,13 @@ const Home = () => {
 
         <section className="homeSection blogSection">
           <div className="container">
-            <div className="row">
+            <div className="row pb-3 pb-md-0">
               <div className="col-md-6">
-                <h2 className="sectiontitle font-bold position-relative text-secondary-color">
+                <h2 className="sectiontitle font-bold position-relative text-secondary-color pb-4 pb-md-0">
                   White Papers, Blog, News
                 </h2>
               </div>
-              <div className="col-md-6 text-end">
+              <div className="col-md-6 text-lg-end">
                 <Link className="btn-green text-white" to="Blogs">
                   <span className="text-uppercase"> View All</span>
                 </Link>

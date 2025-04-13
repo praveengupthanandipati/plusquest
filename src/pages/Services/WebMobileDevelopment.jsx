@@ -59,7 +59,7 @@ const WebMobileDevelopment = () => {
           </div>
 
           <div className="row py-2 py-md-5">
-            <div className="col-md-6 order-lg-last align-self-center">
+            <div className="col-md-6 order-md-last align-self-center">
               <h2>Custom Mobile Apps for Business Growth</h2>
               <p>
                 We craft high-performance iOS and Android apps using Flutter,

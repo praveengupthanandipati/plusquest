@@ -7,6 +7,19 @@
 @use "./footer";
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
 
+.navbar-toggler-icon{
+  background:map.get(v.$colors, "secondary-color");
+  border-radius:5px;
+  padding:10px;
+  width:auto;
+  height: auto;
+  i.bi{
+    &:before{
+      color:map.get(v.$colors, "white-color");
+    }
+  }
+}
+
 body {
     @include m.siteMain;    
     background:map.get(v.$colors, "text-white");
@@ -148,13 +161,23 @@ body {
   }
   article{
     .bannerTitle{
-      font-size:clamp(1.5rem, 2.5vw, 2.5rem);      
+      font-size:clamp(1.5rem, 2.5vw, 2.5rem);    
+
+      @include respond-below(map.get(v.$breakpoints, "md")){
+        text-align:center;
+        padding-bottom:20px;
+      }
+        
     }  
     h5{
       font-weight: map.get(v.$font-weights, semibold);
       position: relative;
-      font-size:clamp(1.3rem, 1.5vw, 1.5rem);
+      font-size:clamp(1rem, 1.5vw, 1.5rem);
 
+      @include respond-below(map.get(v.$breakpoints, "md")){
+        text-align:center;
+        padding-bottom:10px;
+      }
       &:before{
         content:'';
         position: absolute;
@@ -171,7 +194,7 @@ body {
     -webkit-text-stroke-width: 1px;
     -webkit-text-stroke-color: #000;  
     color:transparent;
-    font-size: 200px;
+    font-size: clamp(1.5rem, 15vw, 15rem);
     font-style: normal;
     font-weight: 900;
     line-height: normal;
@@ -190,15 +213,29 @@ body {
 
 .homeSection{
   padding:5rem 0;
+
+  @include respond-below(map.get(v.$breakpoints, "md")){
+    padding:2rem 0;
+  }
 }
 
 .AboutIntro{
   .homeAboutImage{
     border:10px solid map.get(v.$colors, "text-white");
+    width:100%;
   }
   .image2{
+    position:absolute;
     bottom:-25px;
     left:-50px;
+    
+
+    @include respond-below(map.get(v.$breakpoints, "md")){
+      position: relative;
+      bottom:0;
+      left:0;
+      margin-top:10px;
+    }
   }
   h2{
     font-size:clamp(1.5rem, 3vw, 3rem)
@@ -279,6 +316,9 @@ body {
 
 .whyChooseSection{  
     .whyrow{   
+      @include respond-below(map.get(v.$breakpoints, "md")){
+        padding:25px 0;
+      }
       .icon{
         width:60px;
         height: 60px;
@@ -292,9 +332,17 @@ body {
       }
       p{
         font-size:13px;
+        @include respond-below(map.get(v.$breakpoints, "md")){
+          text-align: center;
+        }
       }
       h6{
         font-size:clamp(0.9rem, 1.1vw, 1.1rem); 
+
+        @include respond-below(map.get(v.$breakpoints, "md")){
+          text-align: center;
+          padding-top:15px;
+        }
       }
 
       &:nth-child(1){
@@ -323,7 +371,7 @@ body {
 .blogSection{
   .blogCard{
     h5{
-      font-size:clamp(0.8rem, 1vw, 1rem);
+      font-size:clamp(0.9rem, 1vw, 1rem);
       line-height: 150%;
       @include m.transition(all, 0.3s, ease);
     }
@@ -357,11 +405,16 @@ article{
  
 
   .subpageHeader{
-    background-image: radial-gradient( circle farthest-corner at 10% 20%,  rgba(128, 255, 196, 0.1) 0%, rgba(213, 162, 255, 0.1) 90% );
+    background-image: radial-gradient( circle farthest-corner at 10% 20%,  rgba(128, 255, 196, 0.1) 25%, rgba(213, 162, 255, 0.1) 60% );
     padding-top:12rem;
     padding-bottom:5rem;
+
+    @include respond-below(map.get(v.$breakpoints, "md")){
+      padding-top:8rem;
+      padding-bottom:2rem;
+    }
     h1{
-      font-size:clamp(1.5rem, 2.5vw, 2.5rem);
+      font-size:clamp(1.2rem, 2.5vw, 2.5rem);
     }
     h5{
       position:relative;
@@ -375,9 +428,16 @@ article{
         width:110px;
         height: 4px;
         background: linear-gradient(90deg, #84B84B 0%, rgba(133, 255, 0, 0.00) 100%);
+
+        @include respond-below(map.get(v.$breakpoints, "md")){
+          display: none;
+        }
       }
     }
     .BreadCrumb{
+      @include respond-below(map.get(v.$breakpoints, "md")){
+        display: none;
+      }
       .breadcrumb-item{
         font-size:14px;
       }
@@ -386,11 +446,16 @@ article{
   .subpageContent{
     padding:5rem 0;
 
+    @include respond-below(map.get(v.$breakpoints, "md")){
+      padding:2rem 0;
+    }
+
     h2{
-      font-size:clamp(1.8rem, 2vw, 2rem);
+      font-size:clamp(1.3rem, 2vw, 2rem);
       color:map.get(v.$colors, secondary-color);
       font-weight: map.get(v.$font-weights, bold);
       padding-bottom:1rem;
+      padding-top:1rem;
     }
     p{
       color: color.scale(map.get(v.$colors, "black-color"), $lightness: 5%);
@@ -430,7 +495,10 @@ article{
     }
     .team-desc{
       h5{
-        font-size:0.9rem, 1vw, 1rem;
+        font-size:clamp(0.9rem, 1.2vw, 1.2rem)
+      }
+      p{
+        font-size:13px;
       }
     }
   }

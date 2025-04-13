@@ -60,7 +60,7 @@ const DigitalMarketing = () => {
           </div>
 
           <div className="row py-2 py-md-5">
-            <div className="col-md-6 order-lg-last">
+            <div className="col-md-6 order-md-last">
               <img src={DigitalMarketingImg02} alt="" className="img-fluid" />
             </div>
             <div className="col-md-6 align-self-center">

@@ -33,11 +33,11 @@ const Footer = () => {
       <div className="top-header">  
         <div className="container">
             <div className="row">
-                <div className="col-md-4">
+                <div className="col-md-4 text-center text-md-start">
                   <Link to="/">
                       <img src={Logo} className="pb-3" alt="logo" />
                     </Link>
-                    <p className="pe-5">With a team of certified professionals and industry experts, we help clients accelerate digital transformation.</p>
+                    <p className="pe-0 pe-md-5">With a team of certified professionals and industry experts, we help clients accelerate digital transformation.</p>
                     <div>
                         <Link to="/" className="social-icon"><i className="bi bi-facebook"></i></Link>
                         <Link to="/" className="social-icon"><i className="bi bi-twitter-x"></i></Link>
@@ -45,7 +45,7 @@ const Footer = () => {
                     </div>
                 </div>
 
-                <div className="col-md-4">
+                <div className="col-md-4 col-sm-6 pt-4 pt-md-0 d-none d-md-block">
                     <h4 className="text-white font-bold pb-4">Company</h4>
                     <ul className="footer-nav">
                         <li><Link to="/">Home</Link></li>
@@ -56,7 +56,7 @@ const Footer = () => {
                         <li><Link to="/contact">Contact</Link></li>
                     </ul>
                 </div>
-                <div className="col-md-4">
+                <div className="col-md-4 col-sm-6 pt-4 pt-md-0 d-none d-md-block">
                     <h4 className="text-white font-bold pb-4">Services</h4>
                     <ul className="footer-nav">                     
                         <li><Link to="/Services/PowerPlatform">Power Platform & Dynamics 365 CE Resources</Link></li>
@@ -69,7 +69,7 @@ const Footer = () => {
         </div>
       </div>
 
-        <div className="bottom-footer py-4">
+        <div className="bottom-footer py-2 py-md-4">
             <p className="p-0 m-0 text-center">Copyright © 2024 PluseQuest, All rights reserved.</p>
         </div>
     </footer>

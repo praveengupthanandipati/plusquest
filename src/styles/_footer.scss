@@ -2,7 +2,8 @@
 @use "sass:color";
 @use "sass:math";
 @use "variables" as v;
-@use "mixins" as m;
+@use "./mixins" as m;
+@use "./mixins" as *;
 
 footer {
   background: #000422 url(../assets/images/blob-footer.png) no-repeat center
@@ -30,6 +31,10 @@ footer {
   &:before {
     background: url(../assets/images/pattern-footer01.png) no-repeat 0 0;
     left: 0;
+
+    @include respond-below(map.get(v.$breakpoints, "md")){
+      display: none;
+    }
   }
 
   &:after {
@@ -44,8 +49,8 @@ footer {
     border-radius: 10px;
     text-align: center;
     line-height: 45px;
-    right: 25px;
-    bottom: 25px;
+    right: 0;
+    bottom: 52px;
     z-index: 100;
     @include m.transition(all, 0.5s, ease);
 
@@ -61,6 +66,10 @@ footer {
   }
   .top-header {
     padding: 120px 0;
+
+    @include respond-below(map.get(v.$breakpoints, "md")){
+      padding:25px 0;
+    }
 
     .social-icon {
       width: 40px;
@@ -90,8 +99,7 @@ footer {
   .footer-nav {
     li {
       padding-bottom: 15px;
-      a {
-        // color:lighten(map.get(v.$colors, label-color), 20%);
+      a {       
         color: color.scale(map.get(v.$colors, label-color), $lightness: 70%);
         @include m.transition(all, 0.3s, ease);
         position: relative;
@@ -117,7 +125,7 @@ footer {
     background: map.get(v.$colors, darkPrimary-color);
 
     p {
-      font-size: 13px;
+      font-size: 12px;
     }
   }
 }

@@ -37,11 +37,11 @@ const HomeServices = () => {
     <div>
        <div className="row cardsRow">
         {serviceCards.map((card, index)=>(
-            <div className="col-md-3" key={card.id || index}>
+            <div className="col-lg-3 col-sm-6" key={card.id || index}>
                 <div className="serviceCard position-relative">
                      <Likk to={card.link}>
                         <figure>
-                            <img src={card.image} className='img-fluid' alt={card.title}/>
+                            <img src={card.image} className='img-fluid w-100' alt={card.title}/>
                         </figure>
                         <article className="position-absolute p-4">
                             <h3 className="font-bold text-white">{card.title}</h3>

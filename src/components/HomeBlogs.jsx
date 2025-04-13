@@ -70,7 +70,7 @@ const HomeBlogs = ({ home = false }) => {
   return (
     <div className="row pt-3 pt-md-5">
       {blogItems.map((blogItem, index) => (
-        <div className="col-md-3 pb-4" key={index}>
+        <div className="col-md-3 pb-4 col-sm-6" key={index}>
           <Link
             to={home ? `/Blogs/${blogItem.link}` : blogItem.link}
             className="blogCard"

@@ -115,7 +115,7 @@ const About = () => {
               <h2>Our Team</h2>
             </div>
             {teamMembers.map((member) => (
-              <div className="col-md-3">
+              <div className="col-md-3 col-6">
                 <figure className="teampic">
                   <img
                     src={member.image}
