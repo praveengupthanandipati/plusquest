@@ -1,6 +1,6 @@
 
 @use "sass:map";
-@use "variables" as v;
+@use "./variables" as v;
 //Mixin for Transition
 @mixin transition($property: all, $duration: 0.3s, $timing: ease) {
   transition: $property $duration $timing;
@@ -107,7 +107,7 @@ Usage Transition
 /**
 Usage of Mixins of breakpoints
 container {
-    @include respond-between(map-get($breakpoints, "md"), map-get($breakpoints, "xl")) {
+    @include respond-between(map.get(v.$breakpoints, "md"), map-get(v.$breakpoints, "xl")) {
         max-width: 960px;
         margin: 0 auto;
     }
@@ -115,14 +115,14 @@ container {
 
 header {
     font-size: 1.5rem;
-    @include respond-above(map-get($breakpoints, "md")) {
+    @include respond-above(map.get(v.$breakpoints, "md")) {
         font-size: 2rem;
     }
 }
 
 sidebar {
     width: 25%;
-    @include respond-below(map-get($breakpoints, "xl")) {
+    @include respond-below(map.get(v.$breakpoints, "xl")) {
         width: 100%;
     }
 }

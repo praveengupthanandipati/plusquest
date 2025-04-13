@@ -9,21 +9,25 @@ import hrHomeImg from "../assets/images/recruting-hr-home-img.jpg";
 const HomeServices = () => {
     const serviceCards=[
         {
+            id:1,
             image:Powerplatformimg,
             title:"Power Platform & Dynamics 365 CE Resources",
             link:"Services/PowerPlatform"
         },
         {
+            id:2,
             image:SocialMediaHomeImg,
             title:"Digital & Social Media Marketing",
             link:"Services/DigitalMarketing"
         },
         {
+            id:3,
             image:WebnMobileHomeImg,
             title:"Website & Mobile App Development",
             link:"Services/WebMobileDevelopment"
         },
         {
+            id:4,
             image:hrHomeImg,
             title:"Staffing and Recruiting HR Services",
             link:"Services/Staffing"
@@ -32,8 +36,8 @@ const HomeServices = () => {
   return (
     <div>
        <div className="row cardsRow">
-        {serviceCards.map((card)=>(
-            <div className="col-md-3">
+        {serviceCards.map((card, index)=>(
+            <div className="col-md-3" key={card.id || index}>
                 <div className="serviceCard position-relative">
                      <Likk to={card.link}>
                         <figure>
@@ -42,7 +46,7 @@ const HomeServices = () => {
                         <article className="position-absolute p-4">
                             <h3 className="font-bold text-white">{card.title}</h3>
                         </article>
-                        <span className="position-absolute rounded-circle"><i class="bi bi-arrow-up-right"></i></span>
+                        <span className="position-absolute rounded-circle"><i className="bi bi-arrow-up-right"></i></span>
                      </Likk>
                 </div>
             </div>

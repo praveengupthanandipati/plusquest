@@ -28,20 +28,20 @@ const Footer = () => {
   return (
     <footer>
        {isVisible && (
-        <Link className="moveTop" onClick={scrollToTop}><i class="bi bi-arrow-up"></i></Link>
+        <Link className="moveTop" onClick={scrollToTop}><i className="bi bi-arrow-up"></i></Link>
       )}
-      <div class="top-header">  
+      <div className="top-header">  
         <div className="container">
             <div className="row">
-                <div class="col-md-4">
+                <div className="col-md-4">
                   <Link to="/">
                       <img src={Logo} className="pb-3" alt="logo" />
                     </Link>
                     <p className="pe-5">With a team of certified professionals and industry experts, we help clients accelerate digital transformation.</p>
                     <div>
-                        <Link to="/" className="social-icon"><i class="bi bi-facebook"></i></Link>
-                        <Link to="/" className="social-icon"><i class="bi bi-twitter-x"></i></Link>
-                        <Link to="/" className="social-icon"><i class="bi bi-linkedin"></i></Link>
+                        <Link to="/" className="social-icon"><i className="bi bi-facebook"></i></Link>
+                        <Link to="/" className="social-icon"><i className="bi bi-twitter-x"></i></Link>
+                        <Link to="/" className="social-icon"><i className="bi bi-linkedin"></i></Link>
                     </div>
                 </div>
 
@@ -69,7 +69,7 @@ const Footer = () => {
         </div>
       </div>
 
-        <div class="bottom-footer py-4">
+        <div className="bottom-footer py-4">
             <p className="p-0 m-0 text-center">Copyright © 2024 PluseQuest, All rights reserved.</p>
         </div>
     </footer>

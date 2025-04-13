@@ -8,7 +8,7 @@ const RecentBlogsWrapper = () => {
           home={true}
           link="/Blogs/"
         />
-        <style jsx>{`
+        <style>{`
           /* Hide all blog items by default */
           .recent-blogs-container .col-md-3 {
             display: none;

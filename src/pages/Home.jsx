@@ -20,22 +20,26 @@ const Home = () => {
 
   const whyChooseCards = [
     {
+      id:1,
       icon: "person-check",
       title: "Certified Experts in Microsoft Power Platform and Dynamics 365",
       desc: "Our skilled developers use the latest technologies to build fast, secure, and scalable websites tailored to your business needs for maximum growth.",
     },
     {
+      id:2,
       icon: "window-split",
       title:
         "Flexible Engagement Models – from project-based to staff augmentation",
       desc: "We create unique, responsive websites and apps that align with your brand identity, ensuring an engaging user experience and higher conversions.",
     },
     {
+      id:3,
       icon: "palette2",
       title: "Client-Centric Approach – We listen, understand, and deliver",
       desc: "Trusted by leading brands, we deliver high-performing digital solutions backed by data-driven strategies and measurable success.",
     },
     {
+      id:4,
       icon: "briefcase",
       title: "Scalable Solutions tailored to your business needs",
       desc: "Trusted by leading brands, we deliver high-performing digital solutions backed by data-driven strategies and measurable success.",
@@ -54,15 +58,15 @@ const Home = () => {
           <div className="container">
             <div className="row">
               <div className="col-md-6">
-                <div class="row">
-                  <div class="col-md-6">
+                <div className="row">
+                  <div className="col-md-6">
                     <img
                       src={About01Image}
                       className="shadow rounded-4 homeAboutImage img-fluid"
                       alt=""
                     />
                   </div>
-                  <div class="col-md-6 position-relative">
+                  <div className="col-md-6 position-relative">
                     <img
                       src={About02Image}
                       className="shadow rounded-4 homeAboutImage image2 position-absolute img-fluid"
@@ -78,7 +82,7 @@ const Home = () => {
                     {aboutTitle}
                   </h2>
                   <h5 className="font-bold">{headingtitle}</h5>
-                  <p class="py-2">{aboutDesc}</p>
+                  <p className="py-2">{aboutDesc}</p>
                   <Link className="btn-blue text-white" to="About">
                     <span className="text-uppercase"> Read More</span>
                   </Link>
@@ -109,7 +113,7 @@ const Home = () => {
 
         <section className="whyChooseSection homeSection">
           <div className="container">
-            <h2 class="sectiontitle font-bold position-relative text-secondary-color">
+            <h2 className="sectiontitle font-bold position-relative text-secondary-color">
               Why Choose Pluse Quest
             </h2>
             <div className="row pt-2 pt-md-5">
@@ -118,13 +122,13 @@ const Home = () => {
               </div>
               <div className="col-md-6 align-self-center">
                 {whyChooseCards.map((whycard) => (
-                  <div className="pb-2 whyrow row">
-                    <div class="col-md-2">
+                  <div className="pb-2 whyrow row" key={whycard.id}>
+                    <div className="col-md-2">
                       <span className="icon d-flex justify-content-center align-items-center mx-auto">
-                        <i class={`bi bi-${whycard.icon}`}></i>
+                        <i className={`bi bi-${whycard.icon}`}></i>
                       </span>
                     </div>
-                    <div class="col-md-10">
+                    <div className="col-md-10">
                       <article>
                         <h6 className="font-semibold pb-2 text-secondary-color">
                           {whycard.title}
@@ -141,9 +145,9 @@ const Home = () => {
 
         <section className="homeSection blogSection">
           <div className="container">
-            <div class="row">
-              <div class="col-md-6">
-                <h2 class="sectiontitle font-bold position-relative text-secondary-color">
+            <div className="row">
+              <div className="col-md-6">
+                <h2 className="sectiontitle font-bold position-relative text-secondary-color">
                   White Papers, Blog, News
                 </h2>
               </div>

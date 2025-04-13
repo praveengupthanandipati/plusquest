@@ -1,26 +1,16 @@
 @use "sass:map"; //Other variables
 $fsize: 16px;
 
-//variables colors
-//Define the color variables
-$darkPrimary-color: #53a100 !default;
-$primary-color: #84B84B !default;
-$secondary-color: #123052 !default;
-$darkSecondary-color: #001329 !default;
-$text-white: #fff;
-$label-color: #999999;
-$black-color: #000;
 
 //defie a color map
-
 $colors: (
-  "primary-color": $primary-color,
-  "darkPrimary-color": $darkPrimary-color,
-  "secondary-color": $secondary-color,
-  "darkSecondary-color": $darkSecondary-color,
-  "text-white": $text-white,
-  "label-color": $label-color,
-  "black-color": $black-color,
+  "primary-color": #84B84B,
+  "darkPrimary-color": #53a100,
+  "secondary-color": #123052,
+  "darkSecondary-color": #001329,
+  "text-white": #fff,
+  "label-color":#999999,
+  "black-color": #000,
 );
 
 //loop colours
@@ -42,18 +32,12 @@ $colors: (
 <div className="border-white p-3"></div>
 **/
 
-//Define the font variables
-$font-weight-light: 300;
-$font-weight-regular: 400;
-$font-weight-semibold: 600;
-$font-weight-bold: 700;
-
 //Font Weights Map
 $font-weights: (
-  "light": $font-weight-light,
-  "regular": $font-weight-regular,
-  "semibold": $font-weight-semibold,
-  "bold": $font-weight-bold,
+  "light": 300,
+  "regular": 400,
+  "semibold": 600,
+  "bold": 700,
 );
 
 //Loop $weight-name, $weight-value in $font-weights
@@ -65,18 +49,11 @@ $font-weights: (
 //<p className="font-light">This text has a light font weight.</p>
 
 //device breakpoints
-$xs: 0;
-$sm: 576px;
-$md: 768px;
-$lg: 992px;
-$xl: 1200px;
-$xxl: 1400px;
-
 $breakpoints: (
-  "xs": $xs,
-  "sm": $sm,
-  "md": $md,
-  "lg": $lg,
-  "xl": $xl,
-  "xxl": $xxl,
+  "xs": 0,
+  "sm": 576px,
+  "md": 768px,
+  "lg": 992px,
+  "xl": 1200px,
+  "xxl": 1400px,
 );
