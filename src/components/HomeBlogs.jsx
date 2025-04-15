@@ -1,5 +1,8 @@
-import React from "react";
+import React, { useRef } from "react";
 import { Link } from "react-router-dom";
+import { useGSAP } from "@gsap/react";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 import MicrosoftPowerPlatform from "../assets/images/blog/blog01img_MicrosoftPowerPlatform.jpg";
 import SocialMediaMarketing from "../assets/images/blog/blog02img_SocilmediaMarketing.jpg";
 import Reactjsbestchoice from "../assets/images/blog/blog03img_reactjsbestchoice.jpg";
@@ -10,6 +13,29 @@ import Dynamics365CRMCustomization from "../assets/images/blog/Dynamics365CRMCus
 import ContentMarketingSecrets from "../assets/images/blog/ContentMarketingSecrets.jpg";
 
 const HomeBlogs = ({ home = false }) => {
+  const blogCardsRef = useRef(null);
+  
+  gsap.registerPlugin(ScrollTrigger);
+  useGSAP(() => {
+    const cards = blogCardsRef.current.children;
+    gsap.from(cards, {
+      y: 100,
+      opacity: 0,
+      duration: 1.2,
+      stagger: {
+        amount: 0.5,
+        from: "start",
+        ease: "power3.out"
+      },
+      scrollTrigger: {
+        trigger: blogCardsRef.current,
+        start: "top center+=100",
+        end: "bottom center",
+        toggleActions: "play none none reverse"
+      }
+    });
+  }, []);
+
   const blogItems = [
     {
       image: MicrosoftPowerPlatform,
@@ -22,14 +48,14 @@ const HomeBlogs = ({ home = false }) => {
       image: SocialMediaMarketing,
       date: "4 days ago",
       title:
-        "5 Social Media Marketing Hacks to Skyrocket Your Startup’s Growth in 2025",
+        "5 Social Media Marketing Hacks to Skyrocket Your Startup's Growth in 2025",
       link: "SocialMediaMarketingHacks",
     },
     {
       image: Reactjsbestchoice,
       date: "4 days ago",
       title:
-        "Why React.js is the Best Choice for Your Startup’s Website in 2025",
+        "Why React.js is the Best Choice for Your Startup's Website in 2025",
       link: "WhyrjsisthebestChoice",
     },
     {
@@ -68,7 +94,7 @@ const HomeBlogs = ({ home = false }) => {
   ];
 
   return (
-    <div className="row pt-3 pt-md-5">
+    <div className="row pt-3 pt-md-5" ref={blogCardsRef}>
       {blogItems.map((blogItem, index) => (
         <div className="col-md-3 pb-4 col-sm-6" key={index}>
           <Link

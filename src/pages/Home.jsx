@@ -1,5 +1,8 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
+import { useGSAP } from "@gsap/react";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 import HomeBanner from "../components/HomeBanner";
 import HomeServices from "../components/HomeServices";
 import RecentBlogsWrapper from "../components/RecentBlogsWrapper";
@@ -7,16 +10,155 @@ import About01Image from "../assets/images/aboutimg01.jpg";
 import About02Image from "../assets/images/aboutimg02.jpg";
 import WhyImageHome from "../assets/images/whyimg.png";
 
+
+
 const Home = () => {
   const aboutWelcome = "Welcome";
   const aboutTitle = "Pluse Quest";
   const headingtitle = "Transforming businesses through digital innovation";
   const aboutDesc =
-    "Whether you need skilled resources for Microsoft Power Platform and Dynamics 365 Customer Engagement, impactful digital marketing strategies, or stunning web and mobile app development, we’re your trusted technology partner.";
+    "Whether you need skilled resources for Microsoft Power Platform and Dynamics 365 Customer Engagement, impactful digital marketing strategies, or stunning web and mobile app development, we're your trusted technology partner.";
   const serviceWelcome = "Services We Offer";
   const serviceMainTitle = "Certified Excellence";
   const serviceSectiontitledesc =
     "Our certified experts drive digital transformation through Microsoft solutions, smart marketing, and intuitive development";
+
+  gsap.registerPlugin(ScrollTrigger);
+  useGSAP(() => {
+    // About section animations
+    gsap.from(".aboutImage1", {
+      x: -100,
+      opacity: 0,
+      duration: 1,
+      scrollTrigger: {
+        trigger: ".AboutIntro",
+        start: "top center",
+        end: "bottom center",
+        toggleActions: "play none none reverse"
+      }
+    });
+
+    gsap.from(".aboutImage2", {
+      x: 100,
+      opacity: 0,
+      duration: 1,
+      delay: 0.3,
+      scrollTrigger: {
+        trigger: ".AboutIntro",
+        start: "top center",
+        end: "bottom center",
+        toggleActions: "play none none reverse"
+      }
+    });
+
+    gsap.from(".aboutContent", {
+      y: 50,
+      opacity: 0,
+      duration: 1,
+      delay: 0.5,
+      scrollTrigger: {
+        trigger: ".AboutIntro",
+        start: "top center",
+        end: "bottom center",
+        toggleActions: "play none none reverse"
+      }
+    });
+
+    // Service section animations
+    gsap.from(".serviceTitle", {
+      y: -50,
+      opacity: 0,
+      duration: 1,
+      scrollTrigger: {
+        trigger: ".serviceSection",
+        start: "top center",
+        end: "bottom center",
+        toggleActions: "play none none reverse"
+      }
+    });
+
+    gsap.from(".serviceDesc", {
+      y: 50,
+      opacity: 0,
+      duration: 1,
+      delay: 0.3,
+      scrollTrigger: {
+        trigger: ".serviceSection",
+        start: "top center",
+        end: "bottom center",
+        toggleActions: "play none none reverse"
+      }
+    });
+
+    // Why Choose section animations
+    gsap.from(".why-image", {
+      y: -100,
+      opacity: 0,
+      duration: 1,
+      scrollTrigger: {
+        trigger: ".whyChooseSection",
+        start: "top center",
+        end: "bottom center",
+        toggleActions: "play none none reverse"
+      }
+    });
+
+    gsap.from(".whyrow", {
+      x: 100,
+      opacity: 0,
+      duration: 1,
+      stagger: {
+        amount: 0.5,
+        ease: "power2.out"
+      },
+      scrollTrigger: {
+        trigger: ".whyChooseSection",
+        start: "top center",
+        end: "bottom center",
+        toggleActions: "play none none reverse"
+      }
+    });
+
+    // Contact section animations
+    gsap.from(".contact-heading", {
+      y: -50,
+      opacity: 0,
+      duration: 1,
+      scrollTrigger: {
+        trigger: ".contactSection",
+        start: "top center",
+        end: "bottom center",
+        toggleActions: "play none none reverse"
+      }
+    });
+
+    gsap.from(".contact-desc", {
+      y: 50,
+      opacity: 0,
+      duration: 1,
+      delay: 0.3,
+      scrollTrigger: {
+        trigger: ".contactSection",
+        start: "top center",
+        end: "bottom center",
+        toggleActions: "play none none reverse"
+      }
+    });
+
+    gsap.from(".contact-btn", {
+      scale: 0.5,
+      opacity: 0,
+      duration: 1,
+      delay: 0.6,
+      ease: "back.out(1.7)",
+      scrollTrigger: {
+        trigger: ".contactSection",
+        start: "top center",
+        end: "bottom center",
+        toggleActions: "play none none reverse"
+      }
+    });
+  });
 
   const whyChooseCards = [
     {
@@ -62,21 +204,21 @@ const Home = () => {
                   <div className="col-md-6">
                     <img
                       src={About01Image}
-                      className="shadow rounded-4 homeAboutImage img-fluid"
+                      className="shadow rounded-4 homeAboutImage img-fluid aboutImage1"
                       alt=""
                     />
                   </div>
                   <div className="col-md-6 position-relative">
                     <img
                       src={About02Image}
-                      className="shadow rounded-4 homeAboutImage image2 img-fluid"
+                      className="shadow rounded-4 homeAboutImage image2 img-fluid aboutImage2"
                       alt=""
                     />
                   </div>
                 </div>
               </div>
               <div className="col-md-6 align-self-center">
-                <div className="aboutIntro pt-4 pt-md-0">
+                <div className="aboutIntro pt-4 pt-md-0 aboutContent">
                   <h5 className="font-bold">{aboutWelcome}</h5>
                   <h2 className="text-uppercase text-primary-color font-bold">
                     {aboutTitle}
@@ -96,18 +238,20 @@ const Home = () => {
           <div className="container">
             <div className="row">
               <div className="col-md-6">
-                <h5 className="font-bold text-primary-color">
+                <h5 className="font-bold text-primary-color serviceTitle">
                   {serviceWelcome}
                 </h5>
-                <h2 className="font-bold text-secondary-color">
+                <h2 className="font-bold text-secondary-color serviceTitle">
                   {serviceMainTitle}
                 </h2>
               </div>
               <div className="col-md-6">
-                <p>{serviceSectiontitledesc}</p>
+                <p className="serviceDesc">{serviceSectiontitledesc}</p>
               </div>
             </div>
-            <HomeServices />
+            <div className="serviceCards">
+              <HomeServices />
+            </div>
           </div>
         </section>
 
@@ -118,7 +262,7 @@ const Home = () => {
             </h2>
             <div className="row pt-2 pt-md-5">
               <div className="col-md-6">
-                <img src={WhyImageHome} className="img-fluid" />
+                <img src={WhyImageHome} className="img-fluid why-image" alt="Why Choose Us" />
               </div>
               <div className="col-md-6 align-self-center">
                 {whyChooseCards.map((whycard) => (
@@ -163,16 +307,16 @@ const Home = () => {
 
         <section className="homeSection contactSection">
           <div className="container">
-            <div className="row  justify-content-center">
-              <div className="col-md-7">
+            <div className="row justify-content-center">
+              <div className="col-md-8">
                 <article className="text-center">
-                  <h5 className="font-bold text-secondary-color">
+                  <h5 className="font-bold text-secondary-color contact-heading">
                   Have a web project in mind or need expert tech talent? Plus Quest is here to turn your vision into reality. 
                   </h5>
-                  <p className="py-2">
-                  Whether you need a custom website built, a complex web app developed, AI-powered solutions integrated, or data-driven insights for your business, reach out to us. We’re passionate about answering your questions, supporting your digital goals, and delivering cutting-edge web development and AI services. Let’s collaborate to create something extraordinary — get in touch today!
+                  <p className="py-2 contact-desc">
+                  Whether you need a custom website built, a complex web app developed, AI-powered solutions integrated, or data-driven insights for your business, reach out to us. We're passionate about answering your questions, supporting your digital goals, and delivering cutting-edge web development and AI services. Let's collaborate to create something extraordinary — get in touch today!
                   </p>
-                  <Link className="btn-green text-white" to="Contact">
+                  <Link className="btn-green text-white contact-btn" to="Contact">
                     <span className="text-uppercase"> Contact us</span>
                   </Link>
                 </article>
