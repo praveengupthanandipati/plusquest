@@ -35,9 +35,7 @@ const Contact = () => {
           <div className="row justify-content-between">
             <div className="col-lg-7 align-self-center">
               <h4 className="font-bold pb-4">
-                Contact us via email, phone, or by completing the form to
-                discover how Snappy can provide the right solution for your
-                needs.
+              Contact Plus Quest via email, phone, or the form to unlock tailored web solutions. From sleek websites to powerful apps, we’ll align our skills with your goals. Let’s build your next digital success story
               </h4>
               <p>
                 Email:
@@ -46,7 +44,7 @@ const Contact = () => {
               <p>Phone: <Link to="tel:+11234567890">+1 (123) 456-7890</Link></p>
               <div className="row contactcols">
                 <div className="col-lg-4">
-                  <div className="card h-lg-100 mb-2">
+                  <div className="card h-100 mb-2">
                     <div className="card-body">
                       <h5 className="card-title font-bold">Customer Support</h5>
                       <p className="card-text">
@@ -58,7 +56,7 @@ const Contact = () => {
                 </div>
 
                 <div className="col-lg-4">
-                  <div className="card h-lg-100 mb-2">
+                  <div className="card h-100 mb-2">
                     <div className="card-body">
                       <h5 className="card-title font-bold">Feedback and Suggestions</h5>
                       <p className="card-text">
@@ -69,7 +67,7 @@ const Contact = () => {
                 </div>
 
                 <div className="col-lg-4">
-                  <div className="card h-lg-100 mb-2">
+                  <div className="card h-100 mb-2">
                     <div className="card-body">
                       <h5 className="card-title font-bold">Media Inquiries</h5>
                       <p className="card-text">

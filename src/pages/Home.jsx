@@ -167,14 +167,10 @@ const Home = () => {
               <div className="col-md-7">
                 <article className="text-center">
                   <h5 className="font-bold text-secondary-color">
-                    Have a project in mind or need tech talent? <br />
-                    We're here to help.
+                  Have a web project in mind or need expert tech talent? Plus Quest is here to turn your vision into reality. 
                   </h5>
                   <p className="py-2">
-                    Whether you have a question to ask, data to analyze, or an
-                    AI solution to build, please get in touch with us. We are
-                    always ready to answer your questions, support your data
-                    science-related activities and provide our AI services
+                  Whether you need a custom website built, a complex web app developed, AI-powered solutions integrated, or data-driven insights for your business, reach out to us. We’re passionate about answering your questions, supporting your digital goals, and delivering cutting-edge web development and AI services. Let’s collaborate to create something extraordinary — get in touch today!
                   </p>
                   <Link className="btn-green text-white" to="Contact">
                     <span className="text-uppercase"> Contact us</span>

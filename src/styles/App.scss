@@ -51,9 +51,7 @@ body {
       }
       &:hover {
         background: color.adjust(
-          map.get(v.$colors, "darkPrimary-color"),
-          $lightness: -10%
-        );
+          map.get(v.$colors, "darkPrimary-color"),$lightness: -10%);
       }
     }
 
