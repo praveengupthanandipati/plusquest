@@ -70,7 +70,7 @@ const Footer = () => {
       </div>
 
         <div className="bottom-footer py-2 py-md-4">
-            <p className="p-0 m-0 text-center">Copyright © 2024 PluseQuest, All rights reserved.</p>
+            <p className="p-0 m-0 text-center">Copyright © 2025 PluseQuest, All rights reserved.</p>
         </div>
     </footer>
   )

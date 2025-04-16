@@ -4,13 +4,11 @@
 @use "./mixins" as *;
 
 header {
-  .active {
-    color: map.get(v.$colors, "primary-color") !important;
-  }
+ 
   .nav-item {
     .nav-link {
       padding: 12px 15px !important;
-      color:map.get(v.$colors, "darkSecondary-color");
+      color:map.get(v.$colors, "darkSecondary-color")!important;
 
       @include respond-below(map.get(v.$breakpoints, "md")){
         background-color:map.get(v.$colors, "text-white");
@@ -21,6 +19,9 @@ header {
       &:hover {
         color: map.get(v.$colors, "primary-color") !important;
       }
+    }
+    .active {
+      color: map.get(v.$colors, "primary-color") !important;
     }
   }
   .navbar-brand {
