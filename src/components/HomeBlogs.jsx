@@ -1,4 +1,4 @@
-import React, { useRef } from "react";
+import React, { useRef, useState } from "react";
 import { Link } from "react-router-dom";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
@@ -14,6 +14,8 @@ import ContentMarketingSecrets from "../assets/images/blog/ContentMarketingSecre
 
 const HomeBlogs = ({ home = false }) => {
   const blogCardsRef = useRef(null);
+  const [currentPage, setCurrentPage] = useState(1);
+  const itemsPerPage = 16;
   
   gsap.registerPlugin(ScrollTrigger);
   useGSAP(() => {
@@ -34,7 +36,7 @@ const HomeBlogs = ({ home = false }) => {
         toggleActions: "play none none reverse"
       }
     });
-  }, []);
+  }, [currentPage]);
 
   const blogItems = [
     {
@@ -46,7 +48,7 @@ const HomeBlogs = ({ home = false }) => {
     },
     {
       image: SocialMediaMarketing,
-      date: "4 days ago",
+      date: "4 days ago", 
       title:
         "5 Social Media Marketing Hacks to Skyrocket Your Startup's Growth in 2025",
       link: "SocialMediaMarketingHacks",
@@ -91,35 +93,171 @@ const HomeBlogs = ({ home = false }) => {
       title: "Content Marketing Secrets to Dominate Social Media in 2025",
       link: "ContentMarketing",
     },
+    {
+      image: TransformBusinessProcess,
+      date: "4 days ago",
+      title:
+        "Low-Code Revolution: How Power Apps Can Transform Your Business Processes",
+      link: "LowcodeRevolution",
+    },
+    {
+      image: FluttervsReactNativeforStartupsin2025,
+      date: "4 days ago",
+      title:
+        "Mobile App Development: Flutter vs React Native for Startups in 2025",
+      link: "MobileAppDevelopment",
+    },
+    {
+      image: Dynamics365CRMCustomization,
+      date: "4 days ago",
+      title:
+        "Dynamics 365 CRM Customization: Tailoring Solutions for Your Sales Team",
+      link: "DynamicsCRMCustomization",
+    },
+    {
+      image: ContentMarketingSecrets,
+      date: "4 days ago",
+      title: "Content Marketing Secrets to Dominate Social Media in 2025",
+      link: "ContentMarketing",
+    },
+    {
+      image: TransformBusinessProcess,
+      date: "4 days ago",
+      title:
+        "Low-Code Revolution: How Power Apps Can Transform Your Business Processes",
+      link: "LowcodeRevolution",
+    },
+    {
+      image: FluttervsReactNativeforStartupsin2025,
+      date: "4 days ago",
+      title:
+        "Mobile App Development: Flutter vs React Native for Startups in 2025",
+      link: "MobileAppDevelopment",
+    },
+    {
+      image: Dynamics365CRMCustomization,
+      date: "4 days ago",
+      title:
+        "Dynamics 365 CRM Customization: Tailoring Solutions for Your Sales Team",
+      link: "DynamicsCRMCustomization",
+    },
+    {
+      image: ContentMarketingSecrets,
+      date: "4 days ago",
+      title: "Content Marketing Secrets to Dominate Social Media in 2025",
+      link: "ContentMarketing",
+    },
+    {
+      image: TransformBusinessProcess,
+      date: "4 days ago",
+      title:
+        "Low-Code Revolution: How Power Apps Can Transform Your Business Processes",
+      link: "LowcodeRevolution",
+    },
+    {
+      image: FluttervsReactNativeforStartupsin2025,
+      date: "4 days ago",
+      title:
+        "Mobile App Development: Flutter vs React Native for Startups in 2025",
+      link: "MobileAppDevelopment",
+    },
+    {
+      image: Dynamics365CRMCustomization,
+      date: "4 days ago",
+      title:
+        "Dynamics 365 CRM Customization: Tailoring Solutions for Your Sales Team",
+      link: "DynamicsCRMCustomization",
+    },
+    {
+      image: ContentMarketingSecrets,
+      date: "4 days ago",
+      title: "Content Marketing Secrets to Dominate Social Media in 2025",
+      link: "ContentMarketing",
+    },
   ];
 
+  // Calculate pagination
+  const indexOfLastItem = currentPage * itemsPerPage;
+  const indexOfFirstItem = indexOfLastItem - itemsPerPage;
+  const currentItems = blogItems.slice(indexOfFirstItem, indexOfLastItem);
+  const totalPages = Math.ceil(blogItems.length / itemsPerPage);
+
+  const paginate = (pageNumber) => {
+    setCurrentPage(pageNumber);
+    window.scrollTo(0, 0);
+  };
+
   return (
-    <div className="row pt-3 pt-md-5" ref={blogCardsRef}>
-      {blogItems.map((blogItem, index) => (
-        <div className="col-md-3 pb-4 col-sm-6" key={index}>
-          <Link
-            to={home ? `/Blogs/${blogItem.link}` : blogItem.link}
-            className="blogCard"
-          >
-            <figure className="pb-2 m-0">
-              <img
-                src={blogItem.image}
-                alt={blogItem.title}
-                className="img-fluid rounded-3"
-              />
-            </figure>
-            <article>
-              <p className="p-0 m-0">
-                <small className="text-primary-color">{blogItem.date}</small>
-              </p>
-              <h5 className="text-secondary-color font-regular">
-                {blogItem.title}
-              </h5>
-            </article>
-          </Link>
+    <>
+      <div className="row pt-3 pt-md-5" ref={blogCardsRef}>
+        {currentItems.map((blogItem, index) => (
+          <div className="col-md-3 pb-4 col-sm-6" key={index}>
+            <Link
+              to={home ? `/Blogs/${blogItem.link}` : blogItem.link}
+              className="blogCard"
+            >
+              <figure className="pb-2 m-0">
+                <img
+                  src={blogItem.image}
+                  alt={blogItem.title}
+                  className="img-fluid rounded-3"
+                />
+              </figure>
+              <article>
+                <p className="p-0 m-0">
+                  <small className="text-primary-color">{blogItem.date}</small>
+                </p>
+                <h5 className="text-secondary-color font-regular">
+                  {blogItem.title}
+                </h5>
+              </article>
+            </Link>
+          </div>
+        ))}
+      </div>
+
+      {totalPages > 1 && (
+        <div className="row">
+          <div className="col-12">
+            <nav aria-label="Blog pagination">
+              <ul className="pagination justify-content-center">
+                <li className={`page-item ${currentPage === 1 ? 'disabled' : ''}`}>
+                  <button 
+                    className="page-link" 
+                    onClick={() => paginate(currentPage - 1)}
+                    disabled={currentPage === 1}
+                  >
+                    Previous
+                  </button>
+                </li>
+                {[...Array(totalPages)].map((_, index) => (
+                  <li 
+                    key={index} 
+                    className={`page-item ${currentPage === index + 1 ? 'active' : ''}`}
+                  >
+                    <button
+                      className="page-link"
+                      onClick={() => paginate(index + 1)}
+                    >
+                      {index + 1}
+                    </button>
+                  </li>
+                ))}
+                <li className={`page-item ${currentPage === totalPages ? 'disabled' : ''}`}>
+                  <button 
+                    className="page-link" 
+                    onClick={() => paginate(currentPage + 1)}
+                    disabled={currentPage === totalPages}
+                  >
+                    Next
+                  </button>
+                </li>
+              </ul>
+            </nav>
+          </div>
         </div>
-      ))}
-    </div>
+      )}
+    </>
   );
 };
 

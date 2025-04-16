@@ -1,12 +1,76 @@
-import React from "react";
+import React, { useRef } from "react";
 import { Link } from "react-router-dom";
+import { useGSAP } from "@gsap/react";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 import SubPageHeader from "../../components/SubPageHeader";
 import PowerPlatformImg1 from "../../assets/images/powerplatform01.jpg";
 import PowerPlatformImg2 from "../../assets/images/powerplatform02.jpg";
 
 const PowerPlatform = () => {
+  const resourcesRef = useRef(null);
+  const firstSectionRef = useRef(null);
   const subTitle ="Services";
   const title ="Power Platform & Dynamics 365 CRM automation experts";
+
+  gsap.registerPlugin(ScrollTrigger);
+
+  useGSAP(() => {
+    // First Section Animation
+    gsap.from(firstSectionRef.current.querySelector('img'), {
+      y: -100,
+      opacity: 0,
+      duration: 0.8,
+      once: true
+    });
+
+    gsap.from(firstSectionRef.current.querySelector('.col-md-6:last-child'), {
+      y: 100,
+      opacity: 0,
+      duration: 0.8,
+      delay: 0.2,
+      once: true
+    });
+
+    // Resources Section Animation
+    gsap.from(resourcesRef.current.querySelector('img'), {
+      x: 100,
+      opacity: 0,
+      duration: 0.5,
+      scrollTrigger: {
+        trigger: resourcesRef.current,
+        start: "top center",
+        end: "bottom center",
+        toggleActions: "play none none reverse"
+      }
+    });
+
+    gsap.from(resourcesRef.current.querySelector('h2'), {
+      y: -50,
+      opacity: 0,
+      duration: 0.5,
+      scrollTrigger: {
+        trigger: resourcesRef.current,
+        start: "top center",
+        end: "bottom center",
+        toggleActions: "play none none reverse"
+      }
+    });
+
+    gsap.from(resourcesRef.current.querySelectorAll('.list-items li'), {
+      x: -50,
+      opacity: 0,
+      duration: 0.5,
+      stagger: 0.2,
+      scrollTrigger: {
+        trigger: resourcesRef.current,
+        start: "top center",
+        end: "bottom center",
+        toggleActions: "play none none reverse"
+      }
+    });
+  });
+
   return (
     <main className="Subpage">
       <section className="subpageHeader">
@@ -34,7 +98,7 @@ const PowerPlatform = () => {
       </section>
       <section className="subpageContent">
         <div className="container">
-          <div className="row">
+          <div className="row" ref={firstSectionRef}>
             <div className="col-md-6">
               <img src={PowerPlatformImg1} alt="" className="img-fluid" />
             </div>
@@ -51,15 +115,15 @@ const PowerPlatform = () => {
               </p>
               <p>
                 From sales automation to AI-driven analytics, we help you unlock
-                the full potential of Microsoft’s ecosystem. Optimize
+                the full potential of Microsoft's ecosystem. Optimize
                 operations, reduce manual tasks, and connect teams with
                 scalable, cloud-based solutions—all while keeping your data
-                secure and accessible. Let’s transform the way you work.
+                secure and accessible. Let's transform the way you work.
               </p>
             </div>
           </div>
 
-          <div className="row py-2 py-md-5">
+          <div className="row py-2 py-md-5" ref={resourcesRef}>
             <div className="col-md-6 order-md-last">
               <img src={PowerPlatformImg2} alt="" className="img-fluid" />
             </div>
@@ -74,7 +138,7 @@ const PowerPlatform = () => {
                 <li>Power BI</li>
                 <li>Power Virtual Agents</li>
                 <li>Dynamics 365 Customer Engagement (Sales, Service, Marketing)</li>
-                <li>Whether it’s project-based consulting or long-term resourcing, we support your success at every step.</li>
+                <li>Whether it's project-based consulting or long-term resourcing, we support your success at every step.</li>
                </ul>
             </div>
           </div>

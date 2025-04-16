@@ -1,11 +1,18 @@
-import React from "react";
+import React, { useRef } from "react";
 import { Link } from "react-router-dom";
+import { useGSAP } from "@gsap/react";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 import SubPageHeader from "../components/SubPageHeader";
 import About01Img from "../assets/images/about01.jpg";
 import About02Img from "../assets/images/about02.jpg";
 import Teampic from "../assets/images/teampic.jpg";
 
 const About = () => {
+  const whoWeAreRef = useRef(null);
+  const whyPartnerRef = useRef(null);
+  const teamRef = useRef(null);
+
   const subTitle ="About Us";
   const title ="Empowering Your Business with Cutting-Edge Digital Solutions";
   const teamMembers = [
@@ -17,7 +24,7 @@ const About = () => {
     {
       image: Teampic,
       name: "Team Name",
-      designation: "Director - Technologies",
+      designation: "Director - Technologies", 
     },
     {
       image: Teampic,
@@ -30,6 +37,80 @@ const About = () => {
       designation: "Human Resource",
     },
   ];
+
+  gsap.registerPlugin(ScrollTrigger);
+
+  useGSAP(() => {
+    // Who We Are Section Animation
+    gsap.from(whoWeAreRef.current.querySelector('img'), {
+      y: -100,
+      opacity: 0,
+      duration: 0.8,
+      once: true
+    });
+
+    gsap.from(whoWeAreRef.current.querySelector('.col-md-6:last-child'), {
+      y: 100,
+      opacity: 0,
+      duration: 0.8,
+      delay: 0.2,
+      once: true
+    });
+
+    // Why Partner Section Animation
+    gsap.from(whyPartnerRef.current.querySelector('img'), {
+      x: 100,
+      opacity: 0,
+      duration: 0.5,
+      scrollTrigger: {
+        trigger: whyPartnerRef.current,
+        start: "top center",
+        end: "bottom center",
+        toggleActions: "play none none reverse"
+      }
+    });
+
+    gsap.from(whyPartnerRef.current.querySelectorAll('.list-items li'), {
+      x: -50,
+      opacity: 0,
+      duration: 0.5,
+      stagger: 0.2,
+      scrollTrigger: {
+        trigger: whyPartnerRef.current,
+        start: "top center",
+        end: "bottom center",
+        toggleActions: "play none none reverse"
+      }
+    });
+
+    // Team Section Animation
+    gsap.from(teamRef.current.querySelector('h2'), {
+      y: -50,
+      opacity: 0,
+      duration: 0.5,
+      scrollTrigger: {
+        trigger: teamRef.current,
+        start: "top center",
+        end: "bottom center",
+        toggleActions: "play none none reverse"
+      }
+    });
+
+    gsap.from(teamRef.current.querySelectorAll('.col-md-3'), {
+      y: 100,
+      opacity: 0,
+      duration: 0.8,
+      stagger: 0.2,
+      scrollTrigger: {
+        trigger: teamRef.current,
+        start: "top center",
+        end: "bottom center",
+        toggleActions: "play none none reverse"
+      }
+    });
+
+  });
+
   return (
     <main className="Subpage">
       <section className="subpageHeader">
@@ -54,7 +135,7 @@ const About = () => {
       </section>
       <section className="subpageContent">
         <div className="container">
-          <div className="row">
+          <div className="row" ref={whoWeAreRef}>
             <div className="col-md-6">
               <img src={About01Img} alt="" className="img-fluid" />
             </div>
@@ -78,7 +159,7 @@ const About = () => {
                 <strong>                  
                     Building Digital Futures, One Solution at a Time:
                 </strong>
-                At PluseQuest, we don’t just adapt to the digital world—we help
+                At PluseQuest, we don't just adapt to the digital world—we help
                 you lead it. Specializing in Microsoft Power Platform, Dynamics
                 365, and custom development, we turn complex challenges into
                 seamless, scalable solutions.
@@ -86,11 +167,11 @@ const About = () => {
             </div>
           </div>
 
-          <div className="row py-2 py-md-5">
-            <div className="col-md-6 order-lg-last">
+          <div className="row py-2 py-md-5" ref={whyPartnerRef}>
+            <div className="col-md-6 order-lg-last whycol01">
               <img src={About02Img} alt="" className="img-fluid" />
             </div>
-            <div className="col-md-6 align-self-center">
+            <div className="col-md-6 align-self-center whycol02">
               <h2>Why Partner With Us?</h2>
               <ul className="list-items">
                 <li>
@@ -110,7 +191,7 @@ const About = () => {
             </div>
           </div>
 
-          <div className="row">
+          <div className="row" ref={teamRef}>
             <div className="col-md-12">
               <h2>Our Team</h2>
             </div>

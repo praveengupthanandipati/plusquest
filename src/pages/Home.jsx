@@ -29,7 +29,7 @@ const Home = () => {
     gsap.from(".aboutImage1", {
       x: -100,
       opacity: 0,
-      duration: 1,
+      duration: 0.6,
       scrollTrigger: {
         trigger: ".AboutIntro",
         start: "top center",
@@ -41,8 +41,8 @@ const Home = () => {
     gsap.from(".aboutImage2", {
       x: 100,
       opacity: 0,
-      duration: 1,
-      delay: 0.3,
+      duration: 0.6,
+      delay: 0.2,
       scrollTrigger: {
         trigger: ".AboutIntro",
         start: "top center",
@@ -54,8 +54,8 @@ const Home = () => {
     gsap.from(".aboutContent", {
       y: 50,
       opacity: 0,
-      duration: 1,
-      delay: 0.5,
+      duration: 0.6,
+      delay: 0.3,
       scrollTrigger: {
         trigger: ".AboutIntro",
         start: "top center",
@@ -68,7 +68,7 @@ const Home = () => {
     gsap.from(".serviceTitle", {
       y: -50,
       opacity: 0,
-      duration: 1,
+      duration: 0.6,
       scrollTrigger: {
         trigger: ".serviceSection",
         start: "top center",
@@ -80,8 +80,8 @@ const Home = () => {
     gsap.from(".serviceDesc", {
       y: 50,
       opacity: 0,
-      duration: 1,
-      delay: 0.3,
+      duration: 0.6,
+      delay: 0.2,
       scrollTrigger: {
         trigger: ".serviceSection",
         start: "top center",
@@ -94,7 +94,7 @@ const Home = () => {
     gsap.from(".why-image", {
       y: -100,
       opacity: 0,
-      duration: 1,
+      duration: 0.6,
       scrollTrigger: {
         trigger: ".whyChooseSection",
         start: "top center",
@@ -106,9 +106,9 @@ const Home = () => {
     gsap.from(".whyrow", {
       x: 100,
       opacity: 0,
-      duration: 1,
+      duration: 0.6,
       stagger: {
-        amount: 0.5,
+        amount: 0.4,
         ease: "power2.out"
       },
       scrollTrigger: {
@@ -123,7 +123,7 @@ const Home = () => {
     gsap.from(".contact-heading", {
       y: -50,
       opacity: 0,
-      duration: 1,
+      duration: 0.6,
       scrollTrigger: {
         trigger: ".contactSection",
         start: "top center",
@@ -135,8 +135,8 @@ const Home = () => {
     gsap.from(".contact-desc", {
       y: 50,
       opacity: 0,
-      duration: 1,
-      delay: 0.3,
+      duration: 0.6,
+      delay: 0.2,
       scrollTrigger: {
         trigger: ".contactSection",
         start: "top center",
@@ -148,8 +148,8 @@ const Home = () => {
     gsap.from(".contact-btn", {
       scale: 0.5,
       opacity: 0,
-      duration: 1,
-      delay: 0.6,
+      duration: 0.6,
+      delay: 0.3,
       ease: "back.out(1.7)",
       scrollTrigger: {
         trigger: ".contactSection",

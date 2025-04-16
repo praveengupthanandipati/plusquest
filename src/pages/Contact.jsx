@@ -1,11 +1,45 @@
-import React from "react";
+import React, { useRef } from "react";
 import { Link } from "react-router-dom";
+import { useGSAP } from "@gsap/react";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 import SubPageHeader from "../components/SubPageHeader";
 import ContactForm from "../components/ContactForm";
 
 const Contact = () => {
   const subTitle ="Connect With Us";
   const title ="Get in Touch – We're Here to Help You Succeed";
+  const mapSectionRef = useRef(null);
+
+  gsap.registerPlugin(ScrollTrigger);
+
+  useGSAP(() => {
+    // Map Section Animation
+    gsap.from(mapSectionRef.current.querySelector('iframe'), {
+      y: 100,
+      opacity: 0,
+      duration: 0.8,
+      scrollTrigger: {
+        trigger: mapSectionRef.current,
+        start: "top center",
+        end: "bottom center",
+        toggleActions: "play none none reverse"
+      }
+    });
+
+    gsap.from(mapSectionRef.current.querySelector('article'), {
+      x: 100,
+      opacity: 0,
+      duration: 0.8,
+      scrollTrigger: {
+        trigger: mapSectionRef.current,
+        start: "top center",
+        end: "bottom center",
+        toggleActions: "play none none reverse"
+      }
+    });
+  });
+
   return (
     <main className="Subpage">
       <section className="subpageHeader">
@@ -35,7 +69,7 @@ const Contact = () => {
           <div className="row justify-content-between">
             <div className="col-lg-7 align-self-center">
               <h4 className="font-bold pb-4">
-              Contact Plus Quest via email, phone, or the form to unlock tailored web solutions. From sleek websites to powerful apps, we’ll align our skills with your goals. Let’s build your next digital success story
+              Contact Plus Quest via email, phone, or the form to unlock tailored web solutions. From sleek websites to powerful apps, we'll align our skills with your goals. Let's build your next digital success story
               </h4>
               <p>
                 Email:
@@ -86,7 +120,7 @@ const Contact = () => {
            {/* top row ends */}
 
            {/* row starts */}
-           <div className="row py-3 py-md-5 justify-content-between">
+           <div className="row py-3 py-md-5 justify-content-between" ref={mapSectionRef}>
                <div className="col-md-7">
                 <iframe
                       src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d22530153.459896635!2d-129.94270855!3d46.423669000000004!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x809b217e011534db%3A0xff414bc821f08caf!2sQuest%20Technology%20Management!5e0!3m2!1sen!2sin!4v1744303456981!5m2!1sen!2sin"

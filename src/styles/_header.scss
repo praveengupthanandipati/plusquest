@@ -38,11 +38,12 @@ header {
 
     &:hover {
       background: map.get(v.$colors, "primary-color");
+      color:map.get(v.$colors, "text-white")!important;
     }
   }
   .dropdown-item.active{
     background: map.get(v.$colors, "primary-color");
-    color:map.get(v.$colors, black-color)!important;
+    color:map.get(v.$colors, "text-white")!important;
   }
 }
 

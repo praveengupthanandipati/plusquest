@@ -215,6 +215,16 @@ body {
   @include respond-below(map.get(v.$breakpoints, "md")){
     padding:2rem 0;
   }
+
+  .pagination {
+    display: none;
+  }
+}
+
+.recent-blogs-container{
+  .pagination {
+    display: none;
+  }
 }
 
 .AboutIntro{
@@ -541,6 +551,35 @@ article{
     padding-bottom:20px;
     li{
       padding-bottom:0.8rem;
+    }
+  }
+}
+
+
+.pagination{
+  margin-top:4rem;
+  .page-item{
+    .page-link{
+      border:1px solid map.get(v.$colors, "primary-color");
+      color:map.get(v.$colors, "primary-color");
+      border-radius:0;
+      padding:10px 15px;
+      @include m.transition(all, 0.3s, ease);     
+      background:none;
+      
+      &:focus{
+        box-shadow: none;
+      }     
+    }
+  } 
+  .active{
+    .page-link{
+      background:map.get(v.$colors, "primary-color")!important;
+      color:map.get(v.$colors, "text-white");
+
+      &:focus{
+        box-shadow: none;
+      }      
     }
   }
 }

@@ -1,12 +1,83 @@
-import React from "react";
+import React, { useRef } from "react";
 import { Link } from "react-router-dom";
+import { useGSAP } from "@gsap/react";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 import SubPageHeader from "../../components/SubPageHeader";
 import Staffing01Img from "../../assets/images/staffing01.jpg";
 import Staffing02Img from "../../assets/images/staffing02.jpg";
 
 const Staffing = () => {
+  const advantagesRef = useRef(null);
+  const firstSectionRef = useRef(null);
   const subTitle ="Services:Staffing Services";
   const title ="Expert IT staffing solutions for startups and enterprises worldwide.";
+
+  gsap.registerPlugin(ScrollTrigger);
+
+  useGSAP(() => {
+    // First Section Animation
+    gsap.from(firstSectionRef.current.querySelector('img'), {
+      x: -100,
+      opacity: 0,
+      duration: 0.5,
+      repeat: 0,
+    });
+
+    gsap.from(firstSectionRef.current.querySelector('h2'), {
+      y: -50,
+      opacity: 0,
+      duration: 0.5,
+      repeat: 0,
+    });
+
+    gsap.from(firstSectionRef.current.querySelectorAll('.list-items li'), {
+      x: 50,
+      opacity: 0,
+      duration: 0.5,
+      stagger: 0.2,
+      repeat: 0,
+    });
+
+    // Advantages Section Animation
+    gsap.from(advantagesRef.current.querySelector('img'), {
+      x: 100,
+      opacity: 0,
+      duration: 0.5,
+      scrollTrigger: {
+        trigger: advantagesRef.current,
+        start: "top center",
+        end: "bottom center",
+        toggleActions: "play none none reverse"
+      }
+    });
+
+    gsap.from(advantagesRef.current.querySelector('h2'), {
+      y: -50,
+      opacity: 0,
+      duration: 0.5,
+      scrollTrigger: {
+        trigger: advantagesRef.current,
+        start: "top center",
+        end: "bottom center",
+        toggleActions: "play none none reverse"
+      }
+    });
+
+    gsap.from(advantagesRef.current.querySelectorAll('.list-items li'), {
+      x: -50,
+      opacity: 0,
+      duration: 0.5,
+      stagger: 0.2,
+      scrollTrigger: {
+        trigger: advantagesRef.current,
+        start: "top center",
+        end: "bottom center",
+        toggleActions: "play none none reverse"
+      }
+    });
+  });
+
   return (
     <main className="Subpage">
       <section className="subpageHeader">
@@ -35,7 +106,7 @@ const Staffing = () => {
 
       <section className="subpageContent">
         <div className="container">
-          <div className="row">
+          <div className="row" ref={firstSectionRef}>
             <div className="col-md-6">
               <img src={Staffing01Img} alt="" className="img-fluid" />
             </div>
@@ -73,7 +144,7 @@ const Staffing = () => {
             </div>
           </div>
 
-          <div className="row  py-2 py-md-5">
+          <div className="row py-2 py-md-5" ref={advantagesRef}>
             <div className="col-md-6 order-md-last">
               <img src={Staffing02Img} alt="" className="img-fluid" />
             </div>

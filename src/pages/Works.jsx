@@ -1,5 +1,8 @@
-import React from "react";
+import React, { useRef } from "react";
 import { Link } from "react-router-dom";
+import { useGSAP } from "@gsap/react";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 import SubPageHeader from "../components/SubPageHeader";
 import Project01Image from "../assets/images/project01.jpg";
 import Project02Image from "../assets/images/project02.jpg";
@@ -8,35 +11,81 @@ import Project03Image from "../assets/images/project03.jpg";
 const Works = () => {
   const subTitle ="Our Work";
   const title ="Innovative Solutions, Measurable Results – See How We Deliver Excellence";
-    const Projects =[
-        {
-            id:1,
-            image:Project01Image,
-            title:"Project Title will be here",
-            description:"Lorem, ipsum dolor sit amet consectetur adipisicing elit. Excepturi corrupti placeat dolorum ipsum voluptatibus reprehenderit.",
-            services:"Mobile App Development, UI/UX Design",
-            solution:"Key actions (e.g., \"Built a Flutter app with 1-click checkout\").",
-            link:"www.mysite.com"
-        },
-        {
-            id:2,
-            image:Project02Image,
-            title:"Project Title will be here",
-            description:"Lorem, ipsum dolor sit amet consectetur adipisicing elit. Excepturi corrupti placeat dolorum ipsum voluptatibus reprehenderit.",
-            services:"Mobile App Development, UI/UX Design",
-            solution:"Key actions (e.g., \"Built a Flutter app with 1-click checkout\").",
-            link:"www.mysite.com"
-        },
-        {
-            id:3,
-            image:Project03Image,
-            title:"Project Title will be here",
-            description:"Lorem, ipsum dolor sit amet consectetur adipisicing elit. Excepturi corrupti placeat dolorum ipsum voluptatibus reprehenderit.",
-            services:"Mobile App Development, UI/UX Design",
-            solution:"Key actions (e.g., \"Built a Flutter app with 1-click checkout\").",
-            link:"www.mysite.com"
-        },
-    ];
+  const projectRefs = useRef([]);
+  
+  const Projects =[
+    {
+      id:1,
+      image:Project01Image,
+      title:"Project Title will be here",
+      description:"Lorem, ipsum dolor sit amet consectetur adipisicing elit. Excepturi corrupti placeat dolorum ipsum voluptatibus reprehenderit.",
+      services:"Mobile App Development, UI/UX Design",
+      solution:"Key actions (e.g., \"Built a Flutter app with 1-click checkout\").",
+      link:"www.mysite.com"
+    },
+    {
+      id:2,
+      image:Project02Image,
+      title:"Project Title will be here", 
+      description:"Lorem, ipsum dolor sit amet consectetur adipisicing elit. Excepturi corrupti placeat dolorum ipsum voluptatibus reprehenderit.",
+      services:"Mobile App Development, UI/UX Design",
+      solution:"Key actions (e.g., \"Built a Flutter app with 1-click checkout\").",
+      link:"www.mysite.com"
+    },
+    {
+      id:3,
+      image:Project03Image,
+      title:"Project Title will be here",
+      description:"Lorem, ipsum dolor sit amet consectetur adipisicing elit. Excepturi corrupti placeat dolorum ipsum voluptatibus reprehenderit.",
+      services:"Mobile App Development, UI/UX Design", 
+      solution:"Key actions (e.g., \"Built a Flutter app with 1-click checkout\").",
+      link:"www.mysite.com"
+    },
+  ];
+
+  gsap.registerPlugin(ScrollTrigger);
+
+  useGSAP(() => {
+    // Skip first project, animate rest
+    projectRefs.current.slice(1).forEach((projectRef) => {
+      gsap.from(projectRef.querySelector('img'), {
+        x: 100,
+        opacity: 0,
+        duration: 0.5,
+        scrollTrigger: {
+          trigger: projectRef,
+          start: "top center",
+          end: "bottom center",
+          toggleActions: "play none none reverse"
+        }
+      });
+
+      gsap.from(projectRef.querySelector('article'), {
+        x: -50,
+        opacity: 0,
+        duration: 0.5,
+        scrollTrigger: {
+          trigger: projectRef,
+          start: "top center", 
+          end: "bottom center",
+          toggleActions: "play none none reverse"
+        }
+      });
+
+      gsap.from(projectRef.querySelector('.btn-border'), {
+        y: 30,
+        opacity: 0,
+        duration: 0.5,
+        scrollTrigger: {
+          trigger: projectRef,
+          start: "top center",
+          end: "bottom center", 
+          toggleActions: "play none none reverse"
+        }
+      });
+    });
+  });
+
   return (
     <main className="Subpage">
       <section className="subpageHeader">
@@ -61,8 +110,8 @@ const Works = () => {
       </section>
       <section className="subpageContent">
         <div className="container">
-            {Projects.map((project)=>(            
-                <div className="row workRow" key={project.id}>
+            {Projects.map((project, index)=>(            
+                <div className="row workRow" key={project.id} ref={el => projectRefs.current[index] = el}>
                 <div className="col-md-7">
                 <img src={project.image} alt={project.title} className="img-fluid" />
                 </div>
@@ -87,8 +136,6 @@ const Works = () => {
                 </div>
             </div>
           ))}
-
-       
         </div>
       </section>
     </main>

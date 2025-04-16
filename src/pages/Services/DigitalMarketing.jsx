@@ -1,12 +1,76 @@
-import React from "react";
+import React, { useRef } from "react";
 import { Link } from "react-router-dom";
+import { useGSAP } from "@gsap/react";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 import SubPageHeader from "../../components/SubPageHeader";
 import DigitalMarketingImg01 from "../../assets/images/digitalmakrketing01.jpg";
 import DigitalMarketingImg02 from "../../assets/images/digitalmakrketing02.jpg";
 
 const DigitalMarketing = () => {
+  const resourcesRef = useRef(null);
+  const firstSectionRef = useRef(null);
   const subTitle ="Services:Digital & Social Media Marketing";
   const title ="Grow your brand presence with our data-driven marketing solutions";
+
+  gsap.registerPlugin(ScrollTrigger);
+
+  useGSAP(() => {
+    // First Section Animation
+    gsap.from(firstSectionRef.current.querySelector('img'), {
+      y: -100,
+      opacity: 0,
+      duration: 0.8,
+      once: true
+    });
+
+    gsap.from(firstSectionRef.current.querySelector('.col-md-6:last-child'), {
+      y: 100,
+      opacity: 0,
+      duration: 0.8,
+      delay: 0.2,
+      once: true
+    });
+
+    // Resources Section Animation
+    gsap.from(resourcesRef.current.querySelector('img'), {
+      x: 100,
+      opacity: 0,
+      duration: 0.5,
+      scrollTrigger: {
+        trigger: resourcesRef.current,
+        start: "top center",
+        end: "bottom center",
+        toggleActions: "play none none reverse"
+      }
+    });
+
+    gsap.from(resourcesRef.current.querySelector('h2'), {
+      y: -50,
+      opacity: 0,
+      duration: 0.5,
+      scrollTrigger: {
+        trigger: resourcesRef.current,
+        start: "top center",
+        end: "bottom center",
+        toggleActions: "play none none reverse"
+      }
+    });
+
+    gsap.from(resourcesRef.current.querySelectorAll('.list-items li'), {
+      x: -50,
+      opacity: 0,
+      duration: 0.5,
+      stagger: 0.2,
+      scrollTrigger: {
+        trigger: resourcesRef.current,
+        start: "top center",
+        end: "bottom center",
+        toggleActions: "play none none reverse"
+      }
+    });
+  });
+
   return (
     <main className="Subpage">
       <section className="subpageHeader">
@@ -34,7 +98,7 @@ const DigitalMarketing = () => {
       </section>
       <section className="subpageContent">
         <div className="container">
-          <div className="row">
+          <div className="row" ref={firstSectionRef}>
             <div className="col-md-6">
               <img src={DigitalMarketingImg01} alt="" className="img-fluid" />
             </div>
@@ -46,7 +110,7 @@ const DigitalMarketing = () => {
                 Google, Facebook, Instagram, and LinkedIn. We optimize campaigns
                 to attract high-quality leads, drive conversions, and maximize
                 your ROI. Our expertise ensures measurable growth and a
-                competitive edge in today’s fast-paced digital landscape.
+                competitive edge in today's fast-paced digital landscape.
               </p>
               <p>
                 Build lasting connections through targeted social media
@@ -59,7 +123,7 @@ const DigitalMarketing = () => {
             </div>
           </div>
 
-          <div className="row py-2 py-md-5">
+          <div className="row py-2 py-md-5" ref={resourcesRef}>
             <div className="col-md-6 order-md-last">
               <img src={DigitalMarketingImg02} alt="" className="img-fluid" />
             </div>
