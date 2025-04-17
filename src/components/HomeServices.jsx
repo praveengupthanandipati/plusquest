@@ -71,7 +71,9 @@ const HomeServices = () => {
                                 <article className="position-absolute p-4">
                                     <h3 className="font-bold text-white">{card.title}</h3>
                                 </article>
-                                <span className="position-absolute rounded-circle"><i className="bi bi-arrow-up-right"></i></span>
+                                <div className='position-absolute link-div'>
+                                    <span className="rounded-circle"><i className="bi bi-arrow-up-right"></i></span>
+                                </div>
                             </Likk>
                         </div>
                     </div>
