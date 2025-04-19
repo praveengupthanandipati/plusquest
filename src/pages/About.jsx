@@ -59,7 +59,7 @@ const About = () => {
 
     // Why Partner Section Animation
     gsap.from(whyPartnerRef.current.querySelector('img'), {
-      x: 100,
+      y: 100,
       opacity: 0,
       duration: 0.5,
       scrollTrigger: {
@@ -71,7 +71,7 @@ const About = () => {
     });
 
     gsap.from(whyPartnerRef.current.querySelectorAll('.list-items li'), {
-      x: -50,
+      y: -50,
       opacity: 0,
       duration: 0.5,
       stagger: 0.2,

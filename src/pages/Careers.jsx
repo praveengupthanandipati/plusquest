@@ -18,7 +18,7 @@ const Careers = () => {
   useGSAP(() => {
     // First Section Animation
     gsap.from(firstSectionRef.current.querySelector('img'), {
-      x: -100,
+      y: -100,
       opacity: 0,
       duration: 0.5,
       repeat: 0,
@@ -32,7 +32,7 @@ const Careers = () => {
     });
 
     gsap.from(firstSectionRef.current.querySelectorAll('.list-items li'), {
-      x: 50,
+      y: 50,
       opacity: 0,
       duration: 0.5,
       stagger: 0.2,
@@ -41,7 +41,7 @@ const Careers = () => {
 
     // Second Section Animation
     gsap.from(secondSectionRef.current.querySelector('img'), {
-      x: 100,
+      y: 100,
       opacity: 0,
       duration: 0.5,
       scrollTrigger: {
@@ -65,7 +65,7 @@ const Careers = () => {
     });
 
     gsap.from(secondSectionRef.current.querySelectorAll('.list-items li'), {
-      x: -50,
+      y: -50,
       opacity: 0,
       duration: 0.5,
       stagger: 0.2,

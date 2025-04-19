@@ -27,7 +27,7 @@ const Home = () => {
   useGSAP(() => {
     // About section animations
     gsap.from(".aboutImage1", {
-      x: -100,
+      y: -100,
       opacity: 0,
       duration: 0.6,
       scrollTrigger: {
@@ -39,7 +39,7 @@ const Home = () => {
     });
 
     gsap.from(".aboutImage2", {
-      x: 100,
+      y: 100,
       opacity: 0,
       duration: 0.6,
       delay: 0.2,
@@ -104,7 +104,7 @@ const Home = () => {
     });
 
     gsap.from(".whyrow", {
-      x: 100,
+      y: 100,
       opacity: 0,
       duration: 0.6,
       stagger: {

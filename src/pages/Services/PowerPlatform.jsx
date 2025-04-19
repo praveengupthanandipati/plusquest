@@ -34,7 +34,7 @@ const PowerPlatform = () => {
 
     // Resources Section Animation
     gsap.from(resourcesRef.current.querySelector('img'), {
-      x: 100,
+      y: 100,
       opacity: 0,
       duration: 0.5,
       scrollTrigger: {
@@ -58,7 +58,7 @@ const PowerPlatform = () => {
     });
 
     gsap.from(resourcesRef.current.querySelectorAll('.list-items li'), {
-      x: -50,
+      y: -50,
       opacity: 0,
       duration: 0.5,
       stagger: 0.2,

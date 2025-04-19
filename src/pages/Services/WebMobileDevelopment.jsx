@@ -36,7 +36,7 @@ const WebMobileDevelopment = () => {
 
     // Mobile App Section Animation
     gsap.from(mobileAppRef.current.querySelector('img'), {
-      x: 100,
+      y: 100,
       opacity: 0,
       duration: 0.5,
       scrollTrigger: {
@@ -60,7 +60,7 @@ const WebMobileDevelopment = () => {
     });
 
     gsap.from(mobileAppRef.current.querySelectorAll('p'), {
-      x: -50,
+      y: -50,
       opacity: 0,
       duration: 0.5,
       stagger: 0.2,
@@ -74,7 +74,7 @@ const WebMobileDevelopment = () => {
 
     // Development Section Animation
     gsap.from(developmentRef.current.querySelector('img'), {
-      x: 100,
+      y: 100,
       opacity: 0,
       duration: 0.5,
       scrollTrigger: {
@@ -98,7 +98,7 @@ const WebMobileDevelopment = () => {
     });
 
     gsap.from(developmentRef.current.querySelectorAll('.list-items li'), {
-      x: -50,
+      y: -50,
       opacity: 0,
       duration: 0.5,
       stagger: 0.2,
