@@ -3,10 +3,10 @@
 @use "./variables" as v;
 //Mixin for Transition
 @mixin transition($property: all, $duration: 0.3s, $timing: ease) {
-  transition: $property $duration $timing;
-  @supports not (transition: $property $duration $timing) {
-    -webkit-transition: $property $duration $timing;
-  }
+  -webkit-transition: $property $duration $timing;
+     -moz-transition: $property $duration $timing;
+       -o-transition: $property $duration $timing;
+          transition: $property $duration $timing;
 }
 
 /**

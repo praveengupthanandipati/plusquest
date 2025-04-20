@@ -96,10 +96,7 @@ body {
         }
       }
       &:hover {
-        background: color.adjust(
-          map.get(v.$colors, "darkSecondary-color"),
-          $lightness: -10%
-        );
+        background: color.adjust(map.get(v.$colors, "darkSecondary-color"),$lightness: -10%);
         color:map.get(v.$colors, "text-white");
       }
     }
@@ -168,7 +165,7 @@ body {
         
     }  
     h5{
-      font-weight: map.get(v.$font-weights, semibold);
+      font-weight: map.get(v.$font-weights, "semibold");
       position: relative;
       font-size:clamp(1rem, 1.5vw, 1.5rem);
 
@@ -495,8 +492,8 @@ article{
 
     h2{
       font-size:clamp(1.3rem, 2vw, 2rem);
-      color:map.get(v.$colors, secondary-color);
-      font-weight: map.get(v.$font-weights, bold);
+      color:map.get(v.$colors, "secondary-color");
+      font-weight: map.get(v.$font-weights, "bold");
       padding-bottom:1rem;
       padding-top:1rem;
     }
@@ -580,7 +577,7 @@ article{
 .BlogArticle{
   h4{
     padding-bottom:10px;
-    font-weight: map.get(v.$font-weights, semibold);
+    font-weight: map.get(v.$font-weights, "semibold");
   }
   .list-items{
     padding-bottom:20px;

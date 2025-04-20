@@ -10,7 +10,7 @@ footer {
     center;
   min-height: 250px;
   position: relative;
-  color: color.scale(map.get(v.$colors, text-white), $lightness: 80%);
+  color: color.scale(map.get(v.$colors, "text-white"), $lightness: 80%);
   font-size: 13px;
 
   p {
@@ -43,7 +43,7 @@ footer {
   }
   .moveTop {
     position: fixed;
-    background: map.get(v.$colors, secondary-color);
+    background: map.get(v.$colors, "secondary-color");
     width: 50px;
     height: 50px;
     border-radius: 10px;
@@ -56,11 +56,11 @@ footer {
 
     i {
       font-size: 25px;
-      color: map.get(v.$colors, text-white);
+      color: map.get(v.$colors, "text-white");
     }
 
     &:hover {
-      background: map.get(v.$colors, primary-color);
+      background: map.get(v.$colors," primary-color");
       transform: translateY(-5px);
     }
   }
@@ -74,8 +74,7 @@ footer {
     .social-icon {
       width: 40px;
       height: 40px;
-      border-radius: 50%;
-      // border:1px solid map.get(v.$colors, text-white);
+      border-radius: 50%;      
       display: inline-block;
       text-align: center;
       margin-right: 5px;
@@ -83,12 +82,12 @@ footer {
       @include m.transition(all, 0.3s, ease);
 
       i {
-        color: map.get(v.$colors, text-white);
+        color: map.get(v.$colors, "text-white");
         font-size: 20px;
       }
 
       &:hover {
-        background: map.get(v.$colors, primary-color);
+        background: map.get(v.$colors, "primary-color");
       }
     }
   }
@@ -100,7 +99,7 @@ footer {
     li {
       padding-bottom: 15px;
       a {       
-        color: color.scale(map.get(v.$colors, label-color), $lightness: 70%);
+        color: color.scale(map.get(v.$colors, "label-color"), $lightness: 70%);
         @include m.transition(all, 0.3s, ease);
         position: relative;
         padding-left: 25px;
@@ -115,14 +114,14 @@ footer {
         }
 
         &:hover {
-          color: map.get(v.$colors, primary-color);
+          color: map.get(v.$colors, "primary-color");
         }
       }
     }
   }
 
   .bottom-footer {
-    background: map.get(v.$colors, darkPrimary-color);
+    background: map.get(v.$colors, "darkPrimary-color");
 
     p {
       font-size: 12px;

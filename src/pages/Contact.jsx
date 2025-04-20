@@ -28,7 +28,7 @@ const Contact = () => {
     });
 
     gsap.from(mapSectionRef.current.querySelector('article'), {
-      x: 100,
+      y: 100,
       opacity: 0,
       duration: 0.8,
       scrollTrigger: {
@@ -77,7 +77,7 @@ const Contact = () => {
               </p>
               <p>Phone: <Link to="tel:+11234567890">+1 (123) 456-7890</Link></p>
               <div className="row contactcols">
-                <div className="col-lg-4">
+                <div className="col-lg-4 mt-4 mt-lg-0">
                   <div className="card h-100 mb-2">
                     <div className="card-body">
                       <h5 className="card-title font-bold">Customer Support</h5>
@@ -89,7 +89,7 @@ const Contact = () => {
                   </div>
                 </div>
 
-                <div className="col-lg-4">
+                <div className="col-lg-4 mt-4 mt-lg-0">
                   <div className="card h-100 mb-2">
                     <div className="card-body">
                       <h5 className="card-title font-bold">Feedback and Suggestions</h5>
@@ -100,7 +100,7 @@ const Contact = () => {
                   </div>
                 </div>
 
-                <div className="col-lg-4">
+                <div className="col-lg-4 mt-4 mt-lg-0">
                   <div className="card h-100 mb-2">
                     <div className="card-body">
                       <h5 className="card-title font-bold">Media Inquiries</h5>
@@ -113,7 +113,7 @@ const Contact = () => {
 
               </div>
             </div>
-            <div className="col-lg-4">
+            <div className="col-lg-4 mt-4 mt-lg-0">
             <ContactForm/>               
             </div>
           </div>
