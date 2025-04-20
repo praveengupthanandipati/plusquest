@@ -21,6 +21,19 @@ import Project03Image from "../assets/images/project03.jpg";
   ></iframe>
   )
 
+  const video2 =(
+    <iframe 
+    width="100%" 
+    height="315" 
+    src="https://www.youtube.com/embed/5VBRa4s1hVM?si=WgIJPR-ZADGDZEWS" 
+    title="YouTube video player" 
+    frameBorder="0" 
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+    allowFullScreen
+  ></iframe>
+  )
+
+
 
 
 const Works = () => {
@@ -51,6 +64,24 @@ const Works = () => {
     {
       id:3,
       image:video1,
+      title:"Project Title will be here",
+      description:"Lorem, ipsum dolor sit amet consectetur adipisicing elit. Excepturi corrupti placeat dolorum ipsum voluptatibus reprehenderit.",
+      services:"Mobile App Development, UI/UX Design", 
+      solution:"Key actions (e.g., \"Built a Flutter app with 1-click checkout\").",
+      link:"www.mysite.com"
+    },
+    {
+      id:4,
+      image:Project03Image,
+      title:"Project Title will be here", 
+      description:"Lorem, ipsum dolor sit amet consectetur adipisicing elit. Excepturi corrupti placeat dolorum ipsum voluptatibus reprehenderit.",
+      services:"Mobile App Development, UI/UX Design",
+      solution:"Key actions (e.g., \"Built a Flutter app with 1-click checkout\").",
+      link:"www.mysite.com"
+    },
+    {
+      id:5,
+      image:video2,
       title:"Project Title will be here",
       description:"Lorem, ipsum dolor sit amet consectetur adipisicing elit. Excepturi corrupti placeat dolorum ipsum voluptatibus reprehenderit.",
       services:"Mobile App Development, UI/UX Design", 
